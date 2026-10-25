@@ -82,9 +82,9 @@ p + p { margin-top: 0.95em; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 
 /* ---------- controls ---------- */
-.button { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 3rem; padding: 0 1.5rem; background: var(--accent); color: var(--accent-ink); border-radius: var(--radius); font-weight: 600; text-decoration: none; white-space: nowrap; transition: transform var(--t-press) var(--ease-out), background-color var(--t-hover) ease, box-shadow var(--t-hover) ease; }
+.button { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 3rem; padding: 0 1.5rem; background: var(--petrol); color: var(--petrol-ink); border-radius: var(--radius); font-weight: 600; text-decoration: none; white-space: nowrap; transition: transform var(--t-press) var(--ease-out), background-color var(--t-hover) ease; }
 .button:active { transform: scale(0.98); }
-@media (hover: hover) and (pointer: fine) { .button:hover { background: #009aae; } }
+@media (hover: hover) and (pointer: fine) { .button:hover { background: #004a70; } }
 .button-ghost { display: inline-flex; align-items: center; justify-content: center; min-height: 3rem; padding: 0 1.5rem; background: transparent; color: var(--ink); border: 2px solid var(--line); border-radius: var(--radius); font-weight: 600; text-decoration: none; transition: transform var(--t-press) var(--ease-out), border-color var(--t-hover) ease, color var(--t-hover) ease; }
 @media (hover: hover) and (pointer: fine) { .button-ghost:hover { border-color: var(--accent); color: var(--petrol); } }
 .link { color: var(--petrol); text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 0.22em; text-decoration-thickness: 0.08em; transition: text-decoration-color var(--t-hover) ease; }
