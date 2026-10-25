@@ -4,6 +4,9 @@
 @import "@fontsource/roboto-slab/latin-400.css";
 @import "@fontsource/roboto-slab/latin-500.css";
 @import "@fontsource/roboto-slab/latin-700.css";
+/* Keep text in place while fonts swap in (prevents Lighthouse CLS) */
+@font-face { font-family: "Roboto"; font-display: block; }
+@font-face { font-family: "Roboto Slab"; font-display: block; }
 
 /* Almen Lægeklinik Skælskør — tokens from the brand (Elementor globals + theme)
    Brand cyan #00b3cc is the ONE accent; petrol #005b88 is the second field colour.
