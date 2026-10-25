@@ -2,48 +2,472 @@
   "lang": "da",
   "generated": "2026-10-25",
   "original": "https://laegeskaelskor.dk",
-  "preview": "https://12fwww.github.io/laegeskaelskor-dk-www/",
-  "screenshots": {
-    "old-desktop": "old-desktop.jpg",
-    "old-mobile": "old-mobile.jpg",
-    "new-desktop": "new-desktop.jpg",
-    "new-mobile": "new-mobile.jpg"
-  },
+  "preview": "https://12fwww.github.io/laegeskaelskor-dk-www",
   "summary": {
-    "components": 4, "outdated": 3, "closed": 0,
-    "known_vulnerabilities": 5, "unauthenticated": 1,
-    "by_severity": { "unknown": 2, "critical": 1, "medium": 2 },
-    "missing_security_headers": ["strict-transport-security","content-security-policy","x-frame-options","x-content-type-options","referrer-policy","permissions-policy"],
-    "exposed": ["user_enumeration","login_page","readme"],
-    "third_party": 1
+    "seo_old": 83,
+    "seo_new": 100,
+    "vulns_old": 5,
+    "vulns_unauth_old": 1,
+    "outdated_old": 3,
+    "third_party_old": 1
   },
   "platform": {
     "cms": "WordPress",
-    "core": { "name": "WordPress", "version": "6.7", "latest": "6.8", "version_source": "guess", "status": "outdated" },
-    "server": { "server": "nginx", "php_version": "8.1" },
-    "tls": { "expires": "2026-11-01" },
-    "content": { "last_content_update": "2025-06-01", "days_since_update": 146 }
+    "core": {
+      "version": "7.1.3",
+      "latest": "7.1.3",
+      "outdated": false,
+      "version_hidden": false,
+      "vulnerabilities": []
+    },
+    "server": {
+      "server": "nginx",
+      "x_powered_by": null,
+      "php_version": null
+    },
+    "tls": {
+      "valid": true,
+      "protocol": "TLSv1.3",
+      "issuer": "Let's Encrypt",
+      "expires": "2027-01-20",
+      "days_left": 87
+    },
+    "content": {
+      "last_content_update": "2025-11-03",
+      "days_since_update": 355
+    },
+    "fetched_via": "http",
+    "waf_challenge": false
   },
   "components": [
-    { "name": "Breeze Cache", "version": "2.5.18", "latest": "2.6.3", "vulnerabilities": [], "version_source": "readme" },
-    { "name": "CookieYes", "version": "3.5.6", "latest": "3.5.7", "vulnerabilities": [], "version_source": "readme" },
-    { "name": "Elementor", "version": "4.3.2", "latest": "4.3.5", "vulnerabilities": [ { "title": "Stored XSS (Contributor+)", "cve": "CVE-2026-81813", "severity": "unknown" } ], "version_source": "generator" },
-    { "name": "Elementor Pro", "version": "3.26.2", "latest": "3.29.1", "vulnerabilities": [ { "title": "Unauthenticated arbitrary file upload", "cve": "CVE-2026-32475", "severity": "critical", "unauthenticated": true }, { "title": "Stored XSS (Author+)", "cve": "CVE-2024-50555", "severity": "medium" } ], "version_source": "asset ?ver= (guess)" }
+    {
+      "type": "plugin",
+      "slug": "breeze",
+      "version": "2.5.18",
+      "version_source": "readme",
+      "latest": "2.6.3",
+      "latest_released": "2026-10-20",
+      "status": "outdated",
+      "name": "Breeze Cache",
+      "vulns": 0,
+      "unauth": 0,
+      "worst": null,
+      "top": []
+    },
+    {
+      "type": "plugin",
+      "slug": "cookie-law-info",
+      "version": "3.5.6",
+      "version_source": "readme",
+      "latest": "3.5.7",
+      "latest_released": "2026-10-14",
+      "status": "outdated",
+      "name": "CookieYes",
+      "vulns": 0,
+      "unauth": 0,
+      "worst": null,
+      "top": []
+    },
+    {
+      "type": "plugin",
+      "slug": "elementor",
+      "version": "4.3.2",
+      "version_source": "generator",
+      "latest": "4.3.5",
+      "latest_released": "2026-10-13",
+      "status": "outdated",
+      "name": "Elementor Website Builder",
+      "vulns": 2,
+      "unauth": 0,
+      "worst": "unknown",
+      "top": [
+        {
+          "title": "Elementor <= 4.3.4 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+          "cve": "CVE-2026-81813",
+          "severity": "unknown",
+          "score": 0.0,
+          "fixed_in": "4.3.5",
+          "link": "https://www.cve.org/CVERecord?id=CVE-2026-81813",
+          "unauthenticated": null
+        },
+        {
+          "title": "Elementor <= 4.3.4 - Authenticated (Author+) Stored Cross-Site Scripting",
+          "cve": "CVE-2026-81812",
+          "severity": "unknown",
+          "score": 0.0,
+          "fixed_in": "4.3.5",
+          "link": "https://www.cve.org/CVERecord?id=CVE-2026-81812",
+          "unauthenticated": null
+        }
+      ]
+    },
+    {
+      "type": "plugin",
+      "slug": "elementor-pro",
+      "version": "3.26.2",
+      "version_source": "asset ?ver= (guess)",
+      "latest": null,
+      "latest_released": null,
+      "status": "commercial",
+      "name": "Elementor Pro",
+      "vulns": 3,
+      "unauth": 1,
+      "worst": "critical",
+      "top": [
+        {
+          "title": "Elementor Pro <= 4.2.1 - Unauthenticated Arbitrary File Upload via Upload Field Array Validation Bypass",
+          "cve": "CVE-2026-32475",
+          "severity": "critical",
+          "score": 9.0,
+          "fixed_in": "4.2.2",
+          "link": "https://www.cve.org/CVERecord?id=CVE-2026-32475",
+          "unauthenticated": true
+        },
+        {
+          "title": "Elementor Website Builder <= 3.29.0 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+          "cve": "CVE-2024-50555",
+          "severity": "medium",
+          "score": 6.5,
+          "fixed_in": "3.29.1",
+          "link": "https://www.cve.org/CVERecord?id=CVE-2024-50555",
+          "unauthenticated": false
+        },
+        {
+          "title": "Elementor Pro <= 3.29.0 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+          "cve": "CVE-2025-3076",
+          "severity": "medium",
+          "score": 5.4,
+          "fixed_in": "3.29.1",
+          "link": "https://www.cve.org/CVERecord?id=CVE-2025-3076",
+          "unauthenticated": false
+        }
+      ]
+    }
   ],
   "security_headers": {
-    "strict-transport-security": false, "content-security-policy": false, "x-frame-options": false,
-    "x-content-type-options": false, "referrer-policy": false, "permissions-policy": false
+    "strict-transport-security": {
+      "present": false,
+      "value": "",
+      "why": "HSTS: browsers always use HTTPS"
+    },
+    "content-security-policy": {
+      "present": false,
+      "value": "",
+      "why": "CSP: limits which scripts may run"
+    },
+    "x-frame-options": {
+      "present": false,
+      "value": "",
+      "why": "Clickjacking protection"
+    },
+    "x-content-type-options": {
+      "present": false,
+      "value": "",
+      "why": "MIME sniffing protection"
+    },
+    "referrer-policy": {
+      "present": false,
+      "value": "",
+      "why": "Referrer policy"
+    },
+    "permissions-policy": {
+      "present": false,
+      "value": "",
+      "why": "Permissions policy (camera, microphone, ...)"
+    }
   },
   "exposures": [
-    { "id": "user_enumeration", "label": "User enumeration", "exposed": true },
-    { "id": "login_page", "label": "Login page", "exposed": true },
-    { "id": "readme", "label": "Readme.txt", "exposed": true }
+    {
+      "check": "xmlrpc",
+      "url": "/xmlrpc.php",
+      "exposed": false,
+      "why": "XML-RPC is a common brute-force and DDoS amplification target"
+    },
+    {
+      "check": "user_enumeration",
+      "url": "/wp-json/wp/v2/users",
+      "exposed": true,
+      "count": 2,
+      "why": "login names are public, half of a password attack"
+    },
+    {
+      "check": "login_page",
+      "url": "/wp-login.php",
+      "exposed": true,
+      "why": "the admin login is reachable by anyone on the internet"
+    },
+    {
+      "check": "readme",
+      "url": "/readme.html",
+      "exposed": true,
+      "why": "tells attackers the WordPress version"
+    },
+    {
+      "check": "directory_listing",
+      "url": "/wp-content/uploads/",
+      "exposed": false,
+      "why": "every uploaded file can be browsed"
+    },
+    {
+      "check": "debug_log",
+      "url": "/wp-content/debug.log",
+      "exposed": false,
+      "why": "debug logs leak paths and errors"
+    }
   ],
-  "third_party": ["CookieYes (cookie banner)"],
-  "lighthouse": { "performance": 77, "accessibility": 91, "best_practices": 100, "seo": 100 },
-  "seo_old": { "title": 41, "description": 128, "h1": 1, "h2": 5, "words": 420, "og_image": false },
-  "seo_new": { "title": 48, "description": 132, "h1": 1, "h2": 6, "words": 520, "og_image": true },
-  "lighthouse_new": { "performance": 100, "accessibility": 100, "best_practices": 100, "seo": 100 },
-  "checks": [],
-  "pages": []
+  "third_party": [
+    "Google Analytics"
+  ],
+  "checks": [
+    {
+      "key": "title",
+      "label": "Sidetitel",
+      "old": 81,
+      "new": 100,
+      "preview": false
+    },
+    {
+      "key": "meta_description",
+      "label": "Metabeskrivelse",
+      "old": 69,
+      "new": 100,
+      "preview": false
+    },
+    {
+      "key": "h1",
+      "label": "Én H1-overskrift",
+      "old": 81,
+      "new": 100,
+      "preview": false
+    },
+    {
+      "key": "headings",
+      "label": "Overskriftsstruktur",
+      "old": 69,
+      "new": 100,
+      "preview": false
+    },
+    {
+      "key": "word_count",
+      "label": "Mængde tekst",
+      "old": 94,
+      "new": 100,
+      "preview": false
+    },
+    {
+      "key": "canonical",
+      "label": "Canonical-link",
+      "old": 100,
+      "new": 100,
+      "preview": true
+    },
+    {
+      "key": "indexable",
+      "label": "Kan indekseres",
+      "old": 100,
+      "new": 100,
+      "preview": true
+    },
+    {
+      "key": "open_graph",
+      "label": "Deling på sociale medier (Open Graph)",
+      "old": 81,
+      "new": 100,
+      "preview": false
+    },
+    {
+      "key": "twitter_card",
+      "label": "Twitter/X-kort",
+      "old": 100,
+      "new": 100,
+      "preview": false
+    },
+    {
+      "key": "structured_data",
+      "label": "Strukturerede data (schema.org)",
+      "old": 12,
+      "new": 100,
+      "preview": false
+    },
+    {
+      "key": "image_alt",
+      "label": "Alt-tekst på billeder",
+      "old": 38,
+      "new": 100,
+      "preview": false
+    },
+    {
+      "key": "image_dimensions",
+      "label": "Billeder med faste mål (ingen hop)",
+      "old": 88,
+      "new": 100,
+      "preview": false
+    },
+    {
+      "key": "image_formats",
+      "label": "Moderne billedformater (WebP/AVIF)",
+      "old": 88,
+      "new": 100,
+      "preview": false
+    },
+    {
+      "key": "viewport",
+      "label": "Mobilvisning",
+      "old": 100,
+      "new": 100,
+      "preview": false
+    },
+    {
+      "key": "lang",
+      "label": "Sprog angivet",
+      "old": 100,
+      "new": 100,
+      "preview": false
+    },
+    {
+      "key": "https",
+      "label": "HTTPS",
+      "old": 100,
+      "new": 100,
+      "preview": false
+    },
+    {
+      "key": "ttfb_ms",
+      "label": "Svartid fra serveren",
+      "old": 100,
+      "new": 100,
+      "preview": false
+    },
+    {
+      "key": "html_kb",
+      "label": "Sidestørrelse (HTML)",
+      "old": 50,
+      "new": 100,
+      "preview": false
+    },
+    {
+      "key": "contact_info",
+      "label": "Kontaktinfo i tekst",
+      "old": 100,
+      "new": 100,
+      "preview": false
+    },
+    {
+      "key": "robots_txt",
+      "label": "robots.txt",
+      "old": 100,
+      "new": 100,
+      "site_level": true
+    },
+    {
+      "key": "sitemap",
+      "label": "Sitemap",
+      "old": 100,
+      "new": 100,
+      "site_level": true
+    },
+    {
+      "key": "llms_txt",
+      "label": "llms.txt (AI-søgemaskiner)",
+      "old": 50,
+      "new": 100,
+      "site_level": true
+    },
+    {
+      "key": "https_redirect",
+      "label": "Omdirigering til HTTPS",
+      "old": 100,
+      "new": 100,
+      "site_level": true
+    }
+  ],
+  "pages": [
+    {
+      "path": "/",
+      "title": "Almen Lægeklinik Skælskør: Kvalitets Sundhedsydelser og Personlig Lægepleje",
+      "old": 89,
+      "new": 0
+    },
+    {
+      "path": "/afhaengighedsskabende-medicin/",
+      "title": "Afhaengighedsskabende-medicin - Almen Lægeklinik Skælskør",
+      "old": 82,
+      "new": 100
+    },
+    {
+      "path": "/henvisninger-kronikerkontrol/",
+      "title": "Henvisninger-kronikerkontrol - Almen Lægeklinik Skælskør",
+      "old": 79,
+      "new": 100
+    },
+    {
+      "path": "/kontakt-os/",
+      "title": "Kontakt Os - Almen Lægeklinik Skælskør",
+      "old": 87,
+      "new": 100
+    },
+    {
+      "path": "/om-os/",
+      "title": "Om Os - Almen Lægeklinik Skælskør",
+      "old": 89,
+      "new": 100
+    },
+    {
+      "path": "/selvbetjening/",
+      "title": "Selvbetjening - Almen Lægeklinik Skælskør",
+      "old": 82,
+      "new": 100
+    },
+    {
+      "path": "/vaccinationer/",
+      "title": "Vaccinationer - Almen Lægeklinik Skælskør",
+      "old": 76,
+      "new": 100
+    },
+    {
+      "path": "/welcome-to-cloudways/",
+      "title": "Some Useful Links for You to Get Started - Almen Lægeklinik Skælskør",
+      "old": 68,
+      "new": null
+    }
+  ],
+  "lighthouse": {
+    "old": {
+      "scores": {
+        "performance": 77,
+        "accessibility": 91,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcp_ms": 5528,
+      "tbt_ms": 54,
+      "cls": 0.0006695409571687546,
+      "bytes": 1611077,
+      "requests": 76,
+      "final_url": "https://laegeskaelskor.dk/",
+      "form_factor": "mobile"
+    },
+    "new": {
+      "scores": {
+        "performance": 99,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcp_ms": 1630,
+      "tbt_ms": 0,
+      "cls": 0,
+      "bytes": 519482,
+      "requests": 11,
+      "final_url": "https://12fwww.github.io/laegeskaelskor-dk-www/",
+      "form_factor": "mobile"
+    }
+  },
+  "screenshots": {
+    "old-desktop": "seo/old-desktop.jpg",
+    "new-desktop": "seo/new-desktop.jpg",
+    "old-mobile": "seo/old-mobile.jpg",
+    "new-mobile": "seo/new-mobile.jpg"
+  },
+  "pricing": null
 }
