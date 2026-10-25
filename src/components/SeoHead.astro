@@ -23,7 +23,9 @@ interface Props {
 const { title, description, path, image, jsonld = [], type = 'website' } = Astro.props;
 const production = (import.meta.env.PUBLIC_PRODUCTION_URL || Astro.site?.origin || '').replace(/\/$/, '');
 const preview = import.meta.env.PUBLIC_PREVIEW !== '0';
-const canonical = (import.meta.env.PUBLIC_ORIGIN || production) + path;
+// Canonical always points at the production domain (even in preview) so the preview
+// never competes with the customer's site in Google.
+const canonical = production + path;
 // Every page needs og:image (seo_check fails it otherwise): pages without a photo of their own
 // share src/assets/og.jpg, the strongest photo of the site.
 const fallback = Object.values(import.meta.glob<{ default: ImageMetadata }>('/src/assets/og.{jpg,jpeg,png,webp}', { eager: true }))[0]?.default;
