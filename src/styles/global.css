@@ -134,6 +134,8 @@ p + p { margin-top: 0.95em; }
 .hero h1 { color: #fff; font-size: clamp(2.1rem, 1.1rem + 6vw, 4.6rem); line-height: 1.02; letter-spacing: -0.02em; max-width: 15ch; }
 .hero .hero-sub { font-size: var(--step-lead); max-width: 44ch; margin-top: 1.1rem; color: #eaf5f7; }
 .hero .hero-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 1.5rem; }
+.hero .button { background: var(--petrol); color: var(--petrol-ink); }
+@media (hover: hover) and (pointer: fine) { .hero .button:hover { background: #004a70; } }
 .hero .button-ghost { color: #fff; border-color: rgba(255, 255, 255, 0.7); }
 @media (hover: hover) and (pointer: fine) { .hero .button-ghost:hover { border-color: #fff; color: #fff; } }
 .hero .hero-addr { font-size: var(--step-small); color: #dceff3; margin-top: 1.2rem; }
