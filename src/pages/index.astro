@@ -26,10 +26,8 @@ const updates = [
   <section class="hero">
     <div class="hero-img"><img src={`${B}images/building.jpg`} alt="Almen Lægeklinik Skælskør – klinikbygningen i Gammelgade 10 i Skælskør" width="2200" height="1236" fetchpriority="high" /></div>
     <div class="hero-scrim" aria-hidden="true"></div>
-    <div class="wrap hero-top">
-      <h1>Almen Lægeklinik Skælskør</h1>
-    </div>
     <div class="wrap hero-bottom">
+      <h1>Almen Lægeklinik Skælskør</h1>
       <p class="hero-sub">Et fast team af læger og sygeplejersker i Skælskørs centrum – tryg, kompetent behandling via det offentlige system.</p>
       <div class="hero-actions">
         <a class="button" href={clinic.phoneHref}>Ring 69 16 14 33</a>
@@ -70,8 +68,22 @@ const updates = [
     </div>
   </section>
 
-  <section class="brick-band" aria-hidden="true">
-    <img src={`${B}images/brick.jpg`} alt="Klinikbygningens røde teglfacade" width="2200" height="1069" loading="lazy" />
+  <section class="field-petrol-2 section" data-reveal>
+    <div class="wrap">
+      <div class="grid-2">
+        <div>
+          <h2 class="head">Selvbetjening, hver dag</h2>
+          <p>Tryk på “Selvbetjening”, og du har som patient mulighed for <strong>medicinbestilling</strong> og <strong>e-konsultation</strong>. Vi godkender bestillingerne dagligt, så medicinen som regel er klar til afhentning næste hverdag.</p>
+          <div class="reflinks" style="margin-top:1.4rem;">
+            <a href="https://www.laegevejen.dk/Login" rel="noopener" target="_blank" style="background:rgba(255,255,255,0.12);color:#fff;border:0;">Lægevejen – log ind</a>
+            <a href="https://www.lægevejen.dk/Login/OpretBrugerUdenNemId" rel="noopener" target="_blank" style="background:rgba(255,255,255,0.12);color:#fff;border:0;">Opret dig som bruger</a>
+          </div>
+        </div>
+        <figure>
+          <img src={`${B}images/brick.jpg`} alt="Indgangen til klinikken på Gammelgade 10" width="2200" height="1650" loading="lazy" style="border-radius:var(--radius);width:100%;height:auto;" />
+        </figure>
+      </div>
+    </div>
   </section>
 
   <section class="hours section" data-reveal>
