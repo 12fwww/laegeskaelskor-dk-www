@@ -24,7 +24,7 @@ const updates = [
       path="/" image={ogImg} jsonld={[localBusinessJsonLd]} current="/">
 
   <section class="hero">
-    <div class="hero-img"><img src={`${B}images/building-hero.jpg`} alt="Almen Lægeklinik Skælskør – klinikbygningen i Gammelgade 10 i Skælskør" width="1280" height="719" fetchpriority="high" decoding="async" /></div>
+    <div class="hero-img"><Pic src={building} alt="Almen Lægeklinik Skælskør – klinikbygningen i Gammelgade 10 i Skælskør" width={1280} height={719} cover position="center 62%" eager /></div>
     <div class="hero-scrim" aria-hidden="true"></div>
     <div class="wrap hero-bottom">
       <h1>Almen Lægeklinik Skælskør</h1>
@@ -80,7 +80,7 @@ const updates = [
           </div>
         </div>
         <figure>
-          <img src={`${B}images/brick.jpg`} alt="Indgangen til klinikken på Gammelgade 10" width="2200" height="1650" loading="lazy" style="border-radius:var(--radius);width:100%;height:auto;" />
+          <Pic src={brick} alt="Indgangen til klinikken på Gammelgade 10" width={2200} height={1650} />
         </figure>
       </div>
     </div>
@@ -124,7 +124,7 @@ const updates = [
   </section>
 
   <section class="visit">
-    <div class="visit-img"><img src={`${B}images/building.jpg`} alt="Klinikbygningen på Gammelgade 10, Skælskør" width="2200" height="1236" loading="lazy" /></div>
+    <div class="visit-img"><Pic src={building} alt="Klinikbygningen på Gammelgade 10, Skælskør" width={2200} height={1236} cover position="center 55%" /></div>
     <div class="visit-scrim" aria-hidden="true"></div>
     <div class="visit-card" data-reveal>
       <h2>Find os</h2>
