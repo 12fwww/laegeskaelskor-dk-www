@@ -29,7 +29,8 @@ const canonical = production + path;
 const fallback = Object.values(import.meta.glob<{ default: ImageMetadata }>('/src/assets/og.{jpg,jpeg,png,webp}', { eager: true }))[0]?.default;
 const ogSource = image ?? fallback;
 const og = ogSource ? await getImage({ src: ogSource, width: Math.min(1200, ogSource.width), format: 'jpg' }) : null;
-const ogUrl = og ? new URL(og.src, Astro.site).href : undefined;
+const base = import.meta.env.BASE_URL || '/';
+const ogUrl = og ? new URL(og.src.startsWith('/') ? og.src : `/${og.src}`, new URL(base, import.meta.env.SITE || 'https://localhost')).href : undefined;
 ---
 <title>{title}</title>
 <meta name="description" content={description} />
