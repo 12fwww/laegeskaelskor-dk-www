@@ -1,0 +1,49 @@
+{
+  "lang": "da",
+  "generated": "2026-10-25",
+  "original": "https://laegeskaelskor.dk",
+  "preview": "https://12fwww.github.io/laegeskaelskor-dk-www/",
+  "screenshots": {
+    "old-desktop": "old-desktop.jpg",
+    "old-mobile": "old-mobile.jpg",
+    "new-desktop": "new-desktop.jpg",
+    "new-mobile": "new-mobile.jpg"
+  },
+  "summary": {
+    "components": 4, "outdated": 3, "closed": 0,
+    "known_vulnerabilities": 5, "unauthenticated": 1,
+    "by_severity": { "unknown": 2, "critical": 1, "medium": 2 },
+    "missing_security_headers": ["strict-transport-security","content-security-policy","x-frame-options","x-content-type-options","referrer-policy","permissions-policy"],
+    "exposed": ["user_enumeration","login_page","readme"],
+    "third_party": 1
+  },
+  "platform": {
+    "cms": "WordPress",
+    "core": { "name": "WordPress", "version": "6.7", "latest": "6.8", "version_source": "guess", "status": "outdated" },
+    "server": { "server": "nginx", "php_version": "8.1" },
+    "tls": { "expires": "2026-11-01" },
+    "content": { "last_content_update": "2025-06-01", "days_since_update": 146 }
+  },
+  "components": [
+    { "name": "Breeze Cache", "version": "2.5.18", "latest": "2.6.3", "vulnerabilities": [], "version_source": "readme" },
+    { "name": "CookieYes", "version": "3.5.6", "latest": "3.5.7", "vulnerabilities": [], "version_source": "readme" },
+    { "name": "Elementor", "version": "4.3.2", "latest": "4.3.5", "vulnerabilities": [ { "title": "Stored XSS (Contributor+)", "cve": "CVE-2026-81813", "severity": "unknown" } ], "version_source": "generator" },
+    { "name": "Elementor Pro", "version": "3.26.2", "latest": "3.29.1", "vulnerabilities": [ { "title": "Unauthenticated arbitrary file upload", "cve": "CVE-2026-32475", "severity": "critical", "unauthenticated": true }, { "title": "Stored XSS (Author+)", "cve": "CVE-2024-50555", "severity": "medium" } ], "version_source": "asset ?ver= (guess)" }
+  ],
+  "security_headers": {
+    "strict-transport-security": false, "content-security-policy": false, "x-frame-options": false,
+    "x-content-type-options": false, "referrer-policy": false, "permissions-policy": false
+  },
+  "exposures": [
+    { "id": "user_enumeration", "label": "User enumeration", "exposed": true },
+    { "id": "login_page", "label": "Login page", "exposed": true },
+    { "id": "readme", "label": "Readme.txt", "exposed": true }
+  ],
+  "third_party": ["CookieYes (cookie banner)"],
+  "lighthouse": { "performance": 77, "accessibility": 91, "best_practices": 100, "seo": 100 },
+  "seo_old": { "title": 41, "description": 128, "h1": 1, "h2": 5, "words": 420, "og_image": false },
+  "seo_new": { "title": 48, "description": 132, "h1": 1, "h2": 6, "words": 520, "og_image": true },
+  "lighthouse_new": { "performance": 100, "accessibility": 100, "best_practices": 100, "seo": 100 },
+  "checks": [],
+  "pages": []
+}

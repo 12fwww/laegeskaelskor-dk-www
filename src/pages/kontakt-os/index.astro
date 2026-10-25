@@ -1,0 +1,54 @@
+---
+import Base from '../../layouts/Base.astro';
+import Pic from '../../components/Pic.astro';
+import { breadcrumb, clinic } from '../../data/site';
+import building from '../../assets/original/building-16-9.jpg';
+const B = import.meta.env.BASE_URL;
+const jsonld = [breadcrumb([
+  { name: 'Hjem', path: '/' },
+  { name: 'Kontakt', path: '/kontakt-os/' },
+])];
+---
+<Base title="Kontakt – Almen Lægeklinik Skælskør"
+      description="Kontakt Almen Lægeklinik Skælskør på Gammelgade 10, 4230 Skælskør. Telefon 69 16 14 33, åbent man–fre 8:00–16:00. Bestil også online via Lægevejen."
+      path="/kontakt-os/" image={building} jsonld={jsonld} current="/kontakt-os/">
+
+  <header class="page-head">
+    <div class="wrap ph-inner">
+      <p class="ph-crumb"><a class="link" href={`${B}`}>Hjem</a> · Kontakt</p>
+      <h1>Kontakt</h1>
+      <p class="ph-sub">Al kontakt vedrørende behandling, receptudskrivning eller tidsbestilling sker per telefon eller via Lægevejen.</p>
+    </div>
+  </header>
+
+  <section class="prose wrap">
+    <div class="block" data-reveal>
+      <div class="block-body">
+        <h2>Sådan får du fat i os</h2>
+        <p>Al kontakt vedrørende eventuel behandling, receptudskrivning, tidsbestilling osv. skal ske <strong>per telefon</strong> eller via <a class="link" href="https://www.laegevejen.dk/Login" rel="noopener" target="_blank">Lægevejen</a>, som du kan blive oprettet til ved personlig henvendelse til klinikken.</p>
+        <p>Der er ingen webformular – vi er en mindre lokal klinik, og det er hurtigst at ringe eller bruge Lægevejen.</p>
+        <p><a class="button" href={clinic.phoneHref} style="margin-top:1rem;">Ring 69 16 14 33</a></p>
+      </div>
+      <figure class="block-visual">
+        <Pic src={building} alt="Klinikbygningen på Gammelgade 10 i Skælskør" width={1667} height={937} />
+        <figcaption class="cap">Gammelgade 10, 4230 Skælskør.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="visit">
+    <div class="visit-img"><img src={`${B}images/building.jpg`} alt="Almen Lægeklinik Skælskør – bygningsfacade" width="2200" height="1236" loading="lazy" /></div>
+    <div class="visit-scrim" aria-hidden="true"></div>
+    <div class="visit-card" data-reveal>
+      <h2>Find os</h2>
+      <div class="vc-row"><span class="k">Adresse</span><span class="v">Gammelgade 10, 4230 Skælskør</span></div>
+      <div class="vc-row"><span class="k">Åbent</span><span class="v nums">Man–fre 8:00–16:00</span></div>
+      <div class="vc-row"><span class="k">Bestilling / telefon</span><span class="v nums">Man–fre 8:00–12:00</span></div>
+      <div class="vc-row"><span class="k">Telefon</span><span class="v nums">69 16 14 33</span></div>
+      <div class="vc-actions">
+        <a class="button" href={clinic.phoneHref}>Ring til os</a>
+        <a class="button-ghost" href="https://www.laegevejen.dk/Login" rel="noopener" target="_blank">Lægevejen</a>
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,1511 @@
+{
+ "url": "http://localhost:4321/laegeskaelskor-dk-www/",
+ "at": "2026-10-25T08:13:04.828Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 6,
+   "filled": [
+    0.63,
+    0.37,
+    0.78,
+    0.76,
+    0.62,
+    0.94
+   ],
+   "motion": {
+    "elements": 10,
+    "css": 1,
+    "transitions": 9,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 5365,
+     "screens": 6,
+     "words": 395,
+     "img": 6,
+     "video": 0,
+     "canvas": 0,
+     "svg": 1,
+     "sections": 7,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 4,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "building.jpg",
+      "consult-doctor-child.DxPwDmUm_PqPky.webp",
+      "brick.jpg",
+      "building.jpg"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": []
+    },
+    "hero": {
+     "text": "Almen Lægeklinik Skælskør",
+     "words": 3,
+     "chars": 25,
+     "lines": 2,
+     "size": 64,
+     "vw": 4.4,
+     "font": "Roboto Slab",
+     "weight": 600,
+     "tracking": -0.02,
+     "leading": 1.05,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "left",
+     "widthRatio": 0.51,
+     "top": 160,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Almen Lægeklinik Skælskør",
+     "words": 3,
+     "lines": 2,
+     "size": 64,
+     "font": "Roboto Slab"
+    },
+    "headings": [
+     {
+      "text": "Almen Lægeklinik Skælskør",
+      "words": 3,
+      "chars": 25,
+      "lines": 2,
+      "size": 64,
+      "vw": 4.4,
+      "font": "Roboto Slab",
+      "weight": 600,
+      "tracking": -0.02,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.51,
+      "top": 160,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Vi hjælper med",
+      "words": 3,
+      "chars": 14,
+      "lines": 1,
+      "size": 54.4,
+      "vw": 3.8,
+      "font": "Roboto Slab",
+      "weight": 600,
+      "tracking": -0.01,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.87,
+      "top": 1051,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Medicin, receptfornyelser og e-konsultation",
+      "words": 4,
+      "chars": 43,
+      "lines": 1,
+      "size": 32,
+      "vw": 2.2,
+      "font": "Roboto Slab",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1.55,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.48,
+      "top": 1147,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Vaccinationer",
+      "words": 1,
+      "chars": 13,
+      "lines": 1,
+      "size": 32,
+      "vw": 2.2,
+      "font": "Roboto Slab",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1.55,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.48,
+      "top": 1405,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Henvisninger og kronikerkontrol",
+      "words": 3,
+      "chars": 31,
+      "lines": 1,
+      "size": 32,
+      "vw": 2.2,
+      "font": "Roboto Slab",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1.55,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.48,
+      "top": 1663,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Afhængighedsskabende medicin",
+      "words": 2,
+      "chars": 28,
+      "lines": 1,
+      "size": 32,
+      "vw": 2.2,
+      "font": "Roboto Slab",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1.55,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.48,
+      "top": 1922,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Gratis lægebehandling",
+      "words": 2,
+      "chars": 21,
+      "lines": 1,
+      "size": 54.4,
+      "vw": 3.8,
+      "font": "Roboto Slab",
+      "weight": 600,
+      "tracking": -0.01,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.87,
+      "top": 2255,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Seneste opdateringer",
+      "words": 2,
+      "chars": 20,
+      "lines": 1,
+      "size": 54.4,
+      "vw": 3.8,
+      "font": "Roboto Slab",
+      "weight": 600,
+      "tracking": -0.01,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.87,
+      "top": 3793,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 8,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Roboto",
+       "share": 0.88,
+       "mono": false
+      },
+      {
+       "family": "Roboto Slab",
+       "share": 0.12,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      24,
+      26,
+      27,
+      32,
+      54,
+      64
+     ],
+     "sizeCount": 13,
+     "notLoaded": [],
+     "body": {
+      "font": "Roboto",
+      "size": 19,
+      "leading": 1.55,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 15.3
+     },
+     "measureChars": 72,
+     "max": {
+      "size": 64,
+      "vw": 4.4,
+      "font": "Roboto Slab",
+      "text": "Almen Lægeklinik Skælskør"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0,
+     "smallText": 1
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#ffffff",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 1
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#f3f5f8",
+       "top": 70,
+       "hsl": {
+        "h": 216,
+        "s": 0.26,
+        "l": 0.96
+       }
+      },
+      {
+       "color": "#005b88",
+       "top": 2176,
+       "hsl": {
+        "h": 200,
+        "s": 1,
+        "l": 0.27
+       }
+      },
+      {
+       "color": "#ffffff",
+       "top": 3169,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      },
+      {
+       "color": "#20262b",
+       "top": 4931,
+       "hsl": {
+        "h": 207,
+        "s": 0.15,
+        "l": 0.15
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#20262b",
+       "share": 0.42
+      },
+      {
+       "color": "#eaf5f9",
+       "share": 0.15
+      },
+      {
+       "color": "#9aa6b1",
+       "share": 0.08
+      },
+      {
+       "color": "#5b6268",
+       "share": 0.08
+      },
+      {
+       "color": "#e9edf1",
+       "share": 0.08
+      }
+     ],
+     "button": {
+      "bg": "#00b3cc",
+      "hsl": {
+       "h": 187,
+       "s": 1,
+       "l": 0.4
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 5,
+     "inHero": 3,
+     "radius": 14,
+     "height": 48,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Gå til indholdet",
+      "69 16 14 33",
+      "Ring 69 16 14 33"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 4,
+     "boxRadius": 14,
+     "squareMedia": 3,
+     "roundedMedia": 1,
+     "mediaRadius": 14,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.92
+     }
+    ],
+    "nav": {
+     "links": 8,
+     "fixed": true,
+     "height": 72,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "roboto",
+     "roboto slab"
+    ]
+   },
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 6,
+   "filled": [
+    0.79,
+    0.61,
+    0.43,
+    0.82,
+    0.75,
+    0.95
+   ],
+   "motion": {
+    "elements": 10,
+    "css": 1,
+    "transitions": 9,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 5975,
+     "screens": 5.8,
+     "words": 395,
+     "img": 6,
+     "video": 0,
+     "canvas": 0,
+     "svg": 1,
+     "sections": 7,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 4,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "building.jpg",
+      "consult-doctor-child.DxPwDmUm_PqPky.webp",
+      "brick.jpg",
+      "building.jpg"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": []
+    },
+    "hero": {
+     "text": "Almen Lægeklinik Skælskør",
+     "words": 3,
+     "chars": 25,
+     "lines": 2,
+     "size": 54.4,
+     "vw": 7.1,
+     "font": "Roboto Slab",
+     "weight": 600,
+     "tracking": -0.02,
+     "leading": 1.05,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.81,
+     "top": 160,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Almen Lægeklinik Skælskør",
+     "words": 3,
+     "lines": 2,
+     "size": 54.4,
+     "font": "Roboto Slab"
+    },
+    "headings": [
+     {
+      "text": "Almen Lægeklinik Skælskør",
+      "words": 3,
+      "chars": 25,
+      "lines": 2,
+      "size": 54.4,
+      "vw": 7.1,
+      "font": "Roboto Slab",
+      "weight": 600,
+      "tracking": -0.02,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.81,
+      "top": 160,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Vi hjælper med",
+      "words": 3,
+      "chars": 14,
+      "lines": 1,
+      "size": 45.4,
+      "vw": 5.9,
+      "font": "Roboto Slab",
+      "weight": 600,
+      "tracking": -0.01,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.95,
+      "top": 1138,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Medicin, receptfornyelser og e-konsultation",
+      "words": 4,
+      "chars": 43,
+      "lines": 1,
+      "size": 28.3,
+      "vw": 3.7,
+      "font": "Roboto Slab",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1.55,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.95,
+      "top": 1785,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Vaccinationer",
+      "words": 1,
+      "chars": 13,
+      "lines": 1,
+      "size": 28.3,
+      "vw": 3.7,
+      "font": "Roboto Slab",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1.55,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.95,
+      "top": 2060,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Henvisninger og kronikerkontrol",
+      "words": 3,
+      "chars": 31,
+      "lines": 1,
+      "size": 28.3,
+      "vw": 3.7,
+      "font": "Roboto Slab",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1.55,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.95,
+      "top": 2336,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Afhængighedsskabende medicin",
+      "words": 2,
+      "chars": 28,
+      "lines": 1,
+      "size": 28.3,
+      "vw": 3.7,
+      "font": "Roboto Slab",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1.55,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.95,
+      "top": 2611,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Gratis lægebehandling",
+      "words": 2,
+      "chars": 21,
+      "lines": 1,
+      "size": 45.4,
+      "vw": 5.9,
+      "font": "Roboto Slab",
+      "weight": 600,
+      "tracking": -0.01,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.95,
+      "top": 2888,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Seneste opdateringer",
+      "words": 2,
+      "chars": 20,
+      "lines": 1,
+      "size": 45.4,
+      "vw": 5.9,
+      "font": "Roboto Slab",
+      "weight": 600,
+      "tracking": -0.01,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.95,
+      "top": 4250,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 8,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Roboto",
+       "share": 0.88,
+       "mono": false
+      },
+      {
+       "family": "Roboto Slab",
+       "share": 0.12,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      13,
+      15,
+      16,
+      17,
+      18,
+      24,
+      26,
+      28,
+      45,
+      54
+     ],
+     "sizeCount": 10,
+     "notLoaded": [],
+     "body": {
+      "font": "Roboto",
+      "size": 17.9,
+      "leading": 1.55,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 15.3
+     },
+     "measureChars": 72,
+     "max": {
+      "size": 54.4,
+      "vw": 7.1,
+      "font": "Roboto Slab",
+      "text": "Almen Lægeklinik Skælskør"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0,
+     "smallText": 1
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#ffffff",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 1
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#f3f5f8",
+       "top": 70,
+       "hsl": {
+        "h": 216,
+        "s": 0.26,
+        "l": 0.96
+       }
+      },
+      {
+       "color": "#005b88",
+       "top": 2845,
+       "hsl": {
+        "h": 200,
+        "s": 1,
+        "l": 0.27
+       }
+      },
+      {
+       "color": "#ffffff",
+       "top": 3744,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      },
+      {
+       "color": "#20262b",
+       "top": 5476,
+       "hsl": {
+        "h": 207,
+        "s": 0.15,
+        "l": 0.15
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#20262b",
+       "share": 0.42
+      },
+      {
+       "color": "#eaf5f9",
+       "share": 0.15
+      },
+      {
+       "color": "#9aa6b1",
+       "share": 0.08
+      },
+      {
+       "color": "#5b6268",
+       "share": 0.08
+      },
+      {
+       "color": "#e9edf1",
+       "share": 0.08
+      }
+     ],
+     "button": {
+      "bg": "#00b3cc",
+      "hsl": {
+       "h": 187,
+       "s": 1,
+       "l": 0.4
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 5,
+     "inHero": 3,
+     "radius": 14,
+     "height": 48,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Gå til indholdet",
+      "69 16 14 33",
+      "Ring 69 16 14 33"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 4,
+     "boxRadius": 14,
+     "squareMedia": 3,
+     "roundedMedia": 1,
+     "mediaRadius": 14,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.93
+     }
+    ],
+    "nav": {
+     "links": 8,
+     "fixed": true,
+     "height": 72,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "roboto",
+     "roboto slab"
+    ]
+   },
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 8,
+   "filled": [
+    0.73,
+    0.47,
+    0.41,
+    0.99,
+    0.35,
+    0.69,
+    0.74,
+    0.98
+   ],
+   "motion": {
+    "elements": 10,
+    "css": 1,
+    "transitions": 9,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 6638,
+     "screens": 7.9,
+     "words": 382,
+     "img": 6,
+     "video": 0,
+     "canvas": 0,
+     "svg": 1,
+     "sections": 7,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 4,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "building.jpg",
+      "consult-doctor-child.DxPwDmUm_PqPky.webp",
+      "brick.jpg",
+      "building.jpg"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": []
+    },
+    "hero": {
+     "text": "Almen Lægeklinik Skælskør",
+     "words": 3,
+     "chars": 25,
+     "lines": 2,
+     "size": 35.5,
+     "vw": 9.1,
+     "font": "Roboto Slab",
+     "weight": 600,
+     "tracking": -0.02,
+     "leading": 1.05,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.92,
+     "top": 160,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Almen Lægeklinik Skælskør",
+     "words": 3,
+     "lines": 2,
+     "size": 35.5,
+     "font": "Roboto Slab"
+    },
+    "headings": [
+     {
+      "text": "Almen Lægeklinik Skælskør",
+      "words": 3,
+      "chars": 25,
+      "lines": 2,
+      "size": 35.5,
+      "vw": 9.1,
+      "font": "Roboto Slab",
+      "weight": 600,
+      "tracking": -0.02,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 160,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Vi hjælper med",
+      "words": 3,
+      "chars": 14,
+      "lines": 1,
+      "size": 34.1,
+      "vw": 8.7,
+      "font": "Roboto Slab",
+      "weight": 600,
+      "tracking": -0.01,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 952,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Medicin, receptfornyelser og e-konsultation",
+      "words": 4,
+      "chars": 43,
+      "lines": 2,
+      "size": 22.4,
+      "vw": 5.7,
+      "font": "Roboto Slab",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1.55,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 1324,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Vaccinationer",
+      "words": 1,
+      "chars": 13,
+      "lines": 1,
+      "size": 22.4,
+      "vw": 5.7,
+      "font": "Roboto Slab",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1.55,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 1646,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Henvisninger og kronikerkontrol",
+      "words": 3,
+      "chars": 31,
+      "lines": 1,
+      "size": 22.4,
+      "vw": 5.7,
+      "font": "Roboto Slab",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1.55,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 1933,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Afhængighedsskabende medicin",
+      "words": 2,
+      "chars": 28,
+      "lines": 1,
+      "size": 22.4,
+      "vw": 5.7,
+      "font": "Roboto Slab",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1.55,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 2221,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Gratis lægebehandling",
+      "words": 2,
+      "chars": 21,
+      "lines": 2,
+      "size": 34.1,
+      "vw": 8.7,
+      "font": "Roboto Slab",
+      "weight": 600,
+      "tracking": -0.01,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 2497,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Åbningstider",
+      "words": 1,
+      "chars": 12,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Roboto Slab",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1.55,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.38,
+      "top": 3489,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Seneste opdateringer",
+      "words": 2,
+      "chars": 20,
+      "lines": 1,
+      "size": 34.1,
+      "vw": 8.7,
+      "font": "Roboto Slab",
+      "weight": 600,
+      "tracking": -0.01,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 4601,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Find os",
+      "words": 2,
+      "chars": 7,
+      "lines": 1,
+      "size": 25.6,
+      "vw": 6.6,
+      "font": "Roboto Slab",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1.55,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.79,
+      "top": 5528,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Almen Lægeklinik Skælskør",
+      "words": 3,
+      "chars": 25,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Roboto Slab",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1.55,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 5849,
+      "tag": "div",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 11,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Roboto",
+       "share": 0.87,
+       "mono": false
+      },
+      {
+       "family": "Roboto Slab",
+       "share": 0.13,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      13,
+      15,
+      16,
+      17,
+      18,
+      21,
+      22,
+      24,
+      26,
+      34,
+      36
+     ],
+     "sizeCount": 11,
+     "notLoaded": [],
+     "body": {
+      "font": "Roboto",
+      "size": 17,
+      "leading": 1.55,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 15.3
+     },
+     "measureChars": 42,
+     "max": {
+      "size": 35.5,
+      "vw": 9.1,
+      "font": "Roboto Slab",
+      "text": "Almen Lægeklinik Skælskør"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0,
+     "smallText": 1
+    },
+    "eyebrows": [
+     {
+      "text": "Ring 69 16 14 33",
+      "above": "Vi hjælper med",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": true,
+      "size": 17,
+      "top": 833
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#ffffff",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 1
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#f3f5f8",
+       "top": 69,
+       "hsl": {
+        "h": 216,
+        "s": 0.26,
+        "l": 0.96
+       }
+      },
+      {
+       "color": "#005b88",
+       "top": 2461,
+       "hsl": {
+        "h": 200,
+        "s": 1,
+        "l": 0.27
+       }
+      },
+      {
+       "color": "#ffffff",
+       "top": 3463,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      },
+      {
+       "color": "#20262b",
+       "top": 5793,
+       "hsl": {
+        "h": 207,
+        "s": 0.15,
+        "l": 0.15
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#20262b",
+       "share": 0.41
+      },
+      {
+       "color": "#eaf5f9",
+       "share": 0.15
+      },
+      {
+       "color": "#9aa6b1",
+       "share": 0.09
+      },
+      {
+       "color": "#5b6268",
+       "share": 0.09
+      },
+      {
+       "color": "#e9edf1",
+       "share": 0.08
+      }
+     ],
+     "button": {
+      "bg": "#00b3cc",
+      "hsl": {
+       "h": 187,
+       "s": 1,
+       "l": 0.4
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 4,
+     "inHero": 2,
+     "radius": 14,
+     "height": 48,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Gå til indholdet",
+      "Ring 69 16 14 33"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 5,
+     "boxRadius": 14,
+     "squareMedia": 3,
+     "roundedMedia": 1,
+     "mediaRadius": 14,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.92
+     }
+    ],
+    "nav": {
+     "links": 1,
+     "fixed": true,
+     "height": 72,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "roboto",
+     "roboto slab"
+    ]
+   },
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "WARN",
+   "id": "size-count",
+   "width": 1440,
+   "message": "13 different font sizes (13, 14, 15, 16, 17, 18, 19, 24, 26, 27, 32, 54, 64).",
+   "fix": "A page needs about five: display, heading, lead, body, small.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "no-footage",
+   "width": 1440,
+   "message": "No video anywhere on the page.",
+   "fix": "Look for one honest clip with scripts/assets.mjs --video (the place, the material, the process) and use it as a muted loop with a poster frame. Defend its absence only if no clip fits the subject."
+  },
+  {
+   "level": "WARN",
+   "id": "small-text",
+   "width": 1440,
+   "message": "1 text block(s) under 13px.",
+   "fix": "Nothing meant to be read goes below 13px.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "still-page",
+   "width": 1440,
+   "message": "Little motion: 10 element(s) moved while the page loaded and scrolled.",
+   "fix": "Give every section an entrance for its parts (not one fade of the whole block) and add one moving picture: a looping clip or a slow move on a photograph."
+  },
+  {
+   "level": "FAIL",
+   "id": "eyebrow",
+   "width": 390,
+   "message": "1 eyebrow/kicker label(s) above headings: \"Ring 69 16 14 33\" (pill) above \"Vi hjælper med\"",
+   "fix": "Delete them. If the label carried real information, fold it into the headline or the supporting sentence."
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "/workspace/seo-mirror/laegeskaelskor-dk-www/.taste-skill/inspect/desktop-fold.jpg",
+   "pages": [
+    "/workspace/seo-mirror/laegeskaelskor-dk-www/.taste-skill/inspect/desktop-page-01.jpg",
+    "/workspace/seo-mirror/laegeskaelskor-dk-www/.taste-skill/inspect/desktop-page-02.jpg"
+   ]
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "/workspace/seo-mirror/laegeskaelskor-dk-www/.taste-skill/inspect/tablet-fold.jpg",
+   "pages": [
+    "/workspace/seo-mirror/laegeskaelskor-dk-www/.taste-skill/inspect/tablet-page-01.jpg"
+   ]
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "/workspace/seo-mirror/laegeskaelskor-dk-www/.taste-skill/inspect/mobile-fold.jpg",
+   "pages": [
+    "/workspace/seo-mirror/laegeskaelskor-dk-www/.taste-skill/inspect/mobile-page-01.jpg"
+   ]
+  }
+ ]
+}

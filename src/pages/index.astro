@@ -1,0 +1,128 @@
+---
+import Base from '../layouts/Base.astro';
+import { clinic, localBusinessJsonLd } from '../data/site';
+import building from '../assets/original/building-16-9.jpg';
+import consult from '../assets/original/consult-doctor-child.jpg';
+import smile from '../assets/original/consult-doctor-smile.jpg';
+import brick from '../assets/original/brick-closeup.jpg';
+import Pic from '../components/Pic.astro';
+const B = import.meta.env.BASE_URL;
+const ogImg = smile;
+const services = [
+  { title: 'Medicin, receptfornyelser og e-konsultation', text: 'Bestil fast medicin og få e-konsultation via Lægevejen – vi godkender dagligt, så medicinen som regel er klar næste hverdag.', href: 'selvbetjening/', img: consult, alt: 'Læge undersøger en lille pige med stetoskop mens moren ser til' },
+  { title: 'Vaccinationer', text: 'Rejse-, børn- og HPV-vaccination. Konsultation to måneder inden udlandsrejse, og HPV til både drenge og piger.', href: 'vaccinationer/', img: smile, alt: 'Kvindelig læge undersøger en smilende pige med stetoskop' },
+  { title: 'Henvisninger og kronikerkontrol', text: 'Henvisning til fysioterapeut, psykolog eller speciallæge, og kvartårlig/årlig kontrol ved kroniske lidelser.', href: 'henvisninger-kronikerkontrol/', img: brick, alt: 'Klinikbygningens røde teglfacade set tæt på' },
+  { title: 'Afhængighedsskabende medicin', text: 'Et særligt indsatsområde: solidt nedtrapningsforløb og fornyelse kun ved personligt fremmøde.', href: 'afhaengighedsskabende-medicin/', img: consult, alt: 'Lægekonsultation med barn og forælder' },
+];
+const updates = [
+  { kicker: 'Kørekortsattest', text: 'Ved ansøgning om kørekortsattest skal du nu udfylde formularen i nedenstående link, inden du møder op hos lægen.' },
+  { kicker: 'Online booking', text: 'Det er nu muligt at booke tider online ved klinikkens sygeplejersker – via appen Min Læge eller Lægevejen.dk.' },
+];
+---
+<Base title="Almen Lægeklinik Skælskør – Din lægeklinik i Gammelgade"
+      description="Praktiserende lægeklinik i Skælskør: fast team af læger og sygeplejersker. Medicin, e-konsultation, vaccinationer, henvisninger og kronikerkontrol. Gammelgade 10, tlf. 69 16 14 33."
+      path="/" image={ogImg} jsonld={[localBusinessJsonLd]} current="/">
+
+  <section class="hero">
+    <div class="hero-img"><img src={`${B}images/building.jpg`} alt="Almen Lægeklinik Skælskør – klinikbygningen i Gammelgade 10 i Skælskør" width="2200" height="1236" fetchpriority="high" /></div>
+    <div class="hero-scrim" aria-hidden="true"></div>
+    <div class="wrap hero-top">
+      <h1>Almen Lægeklinik Skælskør</h1>
+    </div>
+    <div class="wrap hero-bottom">
+      <p class="hero-sub">Et fast team af læger og sygeplejersker i Skælskørs centrum – tryg, kompetent behandling via det offentlige system.</p>
+      <div class="hero-actions">
+        <a class="button" href={clinic.phoneHref}>Ring 69 16 14 33</a>
+      </div>
+      <p class="hero-addr">Gammelgade 10, 4230 Skælskør · Man–fre 8:00–16:00</p>
+    </div>
+  </section>
+
+  <section class="section wrap" data-reveal>
+    <h2 class="head" style="margin-bottom: 2.4rem;">Vi hjælper med</h2>
+    <div class="rows">
+      <div class="rowlist">
+        {services.map((s) => (
+          <div class="row" data-reveal>
+            <h3>{s.title}</h3>
+            <p>{s.text}</p>
+            <p><a class="link" href={`${B}${s.href}`}>Læs mere</a></p>
+          </div>
+        ))}
+      </div>
+      <figure class="row-img">
+        <Pic src={consult} alt="En læge taler med en patient under en konsultation" width={2200} height={1466} sizes="(min-width:56rem) 5fr, 100vw" />
+      </figure>
+    </div>
+  </section>
+
+  <section class="field-petrol section" data-reveal>
+    <div class="wrap">
+      <h2 class="head">Gratis lægebehandling</h2>
+      <p class="lead" style="max-width:52ch;">Almen Lægeklinik Skælskør driver lægeklinik i samarbejde med det offentlige system. Som borger med bopæl i Danmark får du gratis lægebehandling.</p>
+      <div class="check">
+        <span class="dot" aria-hidden="true"></span>
+        <p>Er du <strong>gruppe 1-sikret</strong>, har du ret til gratis behandling hos os.</p>
+        <span class="dot" aria-hidden="true"></span>
+        <p>Er du <strong>gruppe 2-sikret</strong>, får du samme tilskud som gruppe 1. Betaler behandlingen mere end tilskuddet, betaler du forskellen selv.</p>
+      </div>
+      <p style="margin-top:1.4rem;">Læs mere om de to sikringsgrupper på <a class="link" style="color:#8fe0ef;" href="https://www.borger.dk" rel="noopener" target="_blank">borger.dk</a>. Som hos enhver praktiserende læge betaler du selv for vaccinationer, der ligger ud over de gratis børnevaccinationer – herunder rejsevaccinationer og diverse attester.</p>
+    </div>
+  </section>
+
+  <section class="brick-band" aria-hidden="true">
+    <img src={`${B}images/brick.jpg`} alt="Klinikbygningens røde teglfacade" width="2200" height="1069" loading="lazy" />
+  </section>
+
+  <section class="hours section" data-reveal>
+    <div class="wrap">
+      <div class="hours-board">
+        <div class="hb-head">
+          <h3>Åbningstider</h3>
+          <p class="muted small">Tidsbestilling og telefon: man–fre 8:00–12:00</p>
+        </div>
+        <div class="hb-cols">
+          <div class="hb-col">
+            <h4>Åbningstider</h4>
+            {clinic.hours.map((h) => <div class={`hb-row ${h.closed ? 'closed' : ''}`}><span class="d">{h.day}</span><span class="t nums">{h.open}</span></div>)}
+          </div>
+          <div class="hb-col">
+            <h4>Tidsbestilling</h4>
+            {clinic.hours.map((h) => <div class={`hb-row ${h.closed ? 'closed' : ''}`}><span class="d">{h.day}</span><span class="t nums">{h.book}</span></div>)}
+          </div>
+          <div class="hb-col">
+            <h4>Telefon</h4>
+            {clinic.hours.map((h) => <div class={`hb-row ${h.closed ? 'closed' : ''}`}><span class="d">{h.day}</span><span class="t nums">{h.phone}</span></div>)}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap" data-reveal>
+    <h2 class="head" style="margin-bottom:1.4rem;">Seneste opdateringer</h2>
+    <div class="updates">
+      {updates.map((u) => (
+        <div class="update">
+          <h3>{u.kicker}</h3>
+          <p>{u.text}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="visit">
+    <div class="visit-img"><img src={`${B}images/building.jpg`} alt="Klinikbygningen på Gammelgade 10, Skælskør" width="2200" height="1236" loading="lazy" /></div>
+    <div class="visit-scrim" aria-hidden="true"></div>
+    <div class="visit-card" data-reveal>
+      <h2>Find os</h2>
+      <div class="vc-row"><span class="k">Adresse</span><span class="v">Gammelgade 10, 4230 Skælskør</span></div>
+      <div class="vc-row"><span class="k">Åbent</span><span class="v nums">Man–fre 8:00–16:00</span></div>
+      <div class="vc-row"><span class="k">Telefon</span><span class="v nums">69 16 14 33</span></div>
+      <div class="vc-actions">
+        <a class="button" href={clinic.phoneHref}>Ring til os</a>
+        <a class="button-ghost" href="https://www.laegevejen.dk/Login" rel="noopener" target="_blank">Lægevejen</a>
+      </div>
+    </div>
+  </section>
+</Base>

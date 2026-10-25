@@ -1,0 +1,379 @@
+---
+// /seo — the sales page for the customer: what their WordPress site runs and
+// risks today, and what the new static site measures instead.
+// Copy to src/pages/seo.astro. Data: src/data/seo-report.json (scripts/report_data.py).
+// Uses the site's tokens from src/styles/global.css (tasteskill base.css names).
+// Never indexed: it is a document for one customer, not a page for search.
+import '../styles/global.css';
+import data from '../data/seo-report.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const da = data.lang === 'da';
+const t = da ? {
+  title: 'Jeres hjemmeside: status og den nye version',
+  intro: (o: string) => `Vi har målt ${o} som den ser ud i dag, og bygget en ny version af den samme side. Her er tallene, side om side.`,
+  measured: 'Målt',
+  seo: 'SEO-score', vulns: 'Kendte sårbarheder', unauth: 'kan bruges uden login',
+  outdated: 'Forældede komponenter', speed: 'Hastighed (mobil)', now: 'I dag', new: 'Ny side',
+  platformH: 'Det, jeres nuværende side kører på',
+  platformP: 'En WordPress-side er et program, der kører på en server hele tiden: kerne, tema og plugins skal opdateres, hver gang der findes en fejl. Her er versionerne, vi kan se udefra.',
+  component: 'Komponent', installed: 'Installeret', latest: 'Nyeste', status: 'Status', known: 'Kendte sårbarheder',
+  st: { current: 'Opdateret', outdated: 'Forældet', closed: 'Fjernet fra WordPress.org', commercial: 'Betalt plugin', unknown: 'Ukendt' },
+  theme: 'Tema', plugin: 'Plugin',
+  core: 'WordPress-kerne', lastUpdate: 'Sidste indholdsopdatering', daysAgo: (d: number) => `${Math.round(d / 30)} måneder siden`,
+  host: 'Hosting', tls: 'SSL-certifikat udløber',
+  headersH: 'Sikkerhedsindstillinger på serveren', present: 'Sat', missing: 'Mangler',
+  hdr: {
+    'strict-transport-security': 'HSTS: browseren bruger altid en sikker forbindelse',
+    'content-security-policy': 'CSP: bestemmer, hvilke scripts der må køre',
+    'x-frame-options': 'Beskyttelse mod, at siden indlejres i en falsk side (clickjacking)',
+    'x-content-type-options': 'Beskyttelse mod forkert fortolkning af filtyper',
+    'referrer-policy': 'Styrer, hvad andre sider får at vide om jeres besøgende',
+    'permissions-policy': 'Spærrer for kamera, mikrofon og lignende',
+  } as Record<string, string>,
+  exposedH: 'Offentligt tilgængeligt',
+  exp: {
+    xmlrpc: 'XML-RPC er et kendt mål for gætning af adgangskoder',
+    user_enumeration: 'Brugernavnene til login kan læses af alle',
+    login_page: 'Administrationens login kan nås af alle på internettet',
+    readme: 'Fortæller angribere, hvilken WordPress-version siden kører',
+    directory_listing: 'Alle uploadede filer kan gennemses',
+    debug_log: 'En fejllog med interne stier ligger offentligt',
+  } as Record<string, string>,
+  previewNote: 'Forhåndsvisningen er skjult for søgemaskiner med vilje; det slås til ved lanceringen på jeres domæne.',
+  thirdH: 'Tredjepartstjenester, der indlæses', thirdP: 'Hver tjeneste er en ekstern afhængighed, og flere af dem kræver cookie-samtykke.',
+  staticH: 'Hvad en statisk side fjerner',
+  staticList: [
+    'Ingen database og intet PHP: der er intet program på serveren, der kan angribes.',
+    'Ingen plugins: ingen sikkerhedsopdateringer at holde trit med, ingen licenser at forny.',
+    'Ingen login-side: der er ingen adgangskode at gætte.',
+    'Siden ligger på et globalt CDN: hurtig overalt og gratis eller næsten gratis at hoste.',
+  ],
+  seoH: 'SEO: før og efter', check: 'Måling', share: 'Andel af sider, der består',
+  pagesH: 'Side for side', page: 'Side',
+  lhH: 'Google Lighthouse (mobil)', perf: 'Ydeevne', a11y: 'Tilgængelighed', bp: 'God praksis', lhSeo: 'SEO',
+  lcp: 'Største indhold vist', bytes: 'Data hentet', requests: 'Forespørgsler',
+  shotsH: 'Før og efter', before: 'I dag', after: 'Ny side', desktop: 'Computer', mobile: 'Mobil',
+  costH: 'Drift', costItem: 'Post', perYear: 'Pr. år', costNote: 'Priser er vores overslag; kontakt os for et tilbud.',
+  needsH: 'Det kræver den nuværende side løbende',
+  needs: ['Hosting med PHP og database', 'Løbende opdatering af kerne, tema og plugins', 'Fornyelse af betalte plugin-licenser', 'Backup og overvågning'],
+  methodH: 'Sådan har vi målt',
+  method: 'Alle målinger er passive: vi har kun læst det, siden viser enhver besøgende (HTML, HTTP-headere, certifikat og offentlige filer). Versioner er aflæst fra sidens egne filer. Sårbarheder er slået op i wpvulnerability.net ud fra versionsnummeret; at en version er berørt betyder ikke, at siden er blevet angrebet. Den nye side er en forhåndsvisning og er skjult for søgemaskiner, indtil den flyttes til jeres domæne.',
+} : {
+  title: 'Your website: where it stands, and the new version',
+  intro: (o: string) => `We measured ${o} as it is today and built a new version of the same site. Here are the numbers, side by side.`,
+  measured: 'Measured',
+  seo: 'SEO score', vulns: 'Known vulnerabilities', unauth: 'usable without logging in',
+  outdated: 'Outdated components', speed: 'Speed (mobile)', now: 'Today', new: 'New site',
+  platformH: 'What your current site runs on',
+  platformP: 'A WordPress site is a program running on a server all the time: core, theme and plugins need an update every time a flaw is found. These are the versions visible from outside.',
+  component: 'Component', installed: 'Installed', latest: 'Latest', status: 'Status', known: 'Known vulnerabilities',
+  st: { current: 'Up to date', outdated: 'Outdated', closed: 'Removed from WordPress.org', commercial: 'Paid plugin', unknown: 'Unknown' },
+  theme: 'Theme', plugin: 'Plugin',
+  core: 'WordPress core', lastUpdate: 'Last content update', daysAgo: (d: number) => `${Math.round(d / 30)} months ago`,
+  host: 'Hosting', tls: 'SSL certificate expires',
+  headersH: 'Security settings on the server', present: 'Set', missing: 'Missing',
+  hdr: {
+    'strict-transport-security': 'HSTS: browsers always use a secure connection',
+    'content-security-policy': 'CSP: decides which scripts may run',
+    'x-frame-options': 'Protection against framing in a fake page (clickjacking)',
+    'x-content-type-options': 'Protection against file types being misread',
+    'referrer-policy': 'Controls what other sites learn about your visitors',
+    'permissions-policy': 'Blocks camera, microphone and similar',
+  } as Record<string, string>,
+  exposedH: 'Publicly reachable',
+  exp: {
+    xmlrpc: 'XML-RPC is a known target for password guessing',
+    user_enumeration: 'The login user names can be read by anyone',
+    login_page: 'The admin login can be reached by anyone on the internet',
+    readme: 'Tells attackers which WordPress version the site runs',
+    directory_listing: 'Every uploaded file can be browsed',
+    debug_log: 'An error log with internal paths is public',
+  } as Record<string, string>,
+  previewNote: 'The preview is hidden from search engines on purpose; that switches on at launch on your domain.',
+  thirdH: 'Third-party services loaded', thirdP: 'Each one is an outside dependency, and several need cookie consent.',
+  staticH: 'What a static site removes',
+  staticList: [
+    'No database and no PHP: there is no program on the server to attack.',
+    'No plugins: no security updates to keep up with, no licences to renew.',
+    'No login page: there is no password to guess.',
+    'Served from a global CDN: fast everywhere and free or nearly free to host.',
+  ],
+  seoH: 'SEO: before and after', check: 'Check', share: 'Share of pages that pass',
+  pagesH: 'Page by page', page: 'Page',
+  lhH: 'Google Lighthouse (mobile)', perf: 'Performance', a11y: 'Accessibility', bp: 'Best practices', lhSeo: 'SEO',
+  lcp: 'Largest content shown', bytes: 'Data loaded', requests: 'Requests',
+  shotsH: 'Before and after', before: 'Today', after: 'New site', desktop: 'Desktop', mobile: 'Mobile',
+  costH: 'Running costs', costItem: 'Item', perYear: 'Per year', costNote: 'Prices are our estimate; contact us for a quote.',
+  needsH: 'What the current site needs on an ongoing basis',
+  needs: ['Hosting with PHP and a database', 'Updates of core, theme and plugins', 'Renewal of paid plugin licences', 'Backups and monitoring'],
+  methodH: 'How we measured',
+  method: 'All checks are passive: we only read what the site shows every visitor (HTML, HTTP headers, the certificate and public files). Versions are read from the site\'s own files. Vulnerabilities are looked up on wpvulnerability.net by version number; an affected version does not mean the site has been attacked. The new site is a preview and hidden from search engines until it moves to your domain.',
+};
+
+const s = data.summary;
+const lh = data.lighthouse || {};
+const host = (u: string) => { try { return new URL(u).host; } catch { return u; } };
+const pct = (v: number | null | undefined) => (v === null || v === undefined ? '–' : `${v}`);
+const kb = (b: number | null | undefined) => (b ? `${Math.round(b / 1024)} KB` : '–');
+const sec = (ms: number | null | undefined) => (ms ? `${(ms / 1000).toFixed(1)} s` : '–');
+const tone = (v: number | null | undefined) => (v === null || v === undefined ? '' : v >= 90 ? 'good' : v >= 50 ? 'mid' : 'bad');
+const core = data.platform?.core;
+const comps = data.components || [];
+const headers = Object.entries(data.security_headers || {});
+const exposed = (data.exposures || []).filter((e: any) => e.exposed);
+const price = data.pricing;
+// pricing.json: { currency, rows: [{ item, old, new }], note? } — numbers per year, written by a person.
+const total = (key: 'old' | 'new') => (price?.rows || []).reduce((a: number, r: any) => a + (Number(r[key]) || 0), 0);
+---
+<!doctype html>
+<html lang={data.lang}>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>{t.title} — {host(data.original)}</title>
+  <link rel="icon" href={`${base}favicon.svg`} />
+</head>
+<body class="seo">
+  <header class="seo-top wrap">
+    <a href={base}>{host(data.original)}</a>
+    <span>{t.measured} {data.generated}</span>
+  </header>
+
+  <main>
+    <section class="wrap seo-hero">
+      <h1>{t.title}</h1>
+      <p class="lead">{t.intro(host(data.original))}</p>
+      <dl class="figures">
+        <div>
+          <dt>{t.seo}</dt>
+          <dd><span class={tone(s.seo_old)}>{pct(s.seo_old)}</span><span class="arrow" aria-hidden="true">→</span><span class={tone(s.seo_new)}>{pct(s.seo_new)}</span></dd>
+          <p>{t.now} → {t.new}</p>
+        </div>
+        {lh.old && lh.new && (
+          <div>
+            <dt>{t.speed}</dt>
+            <dd><span class={tone(lh.old.scores.performance)}>{lh.old.scores.performance}</span><span class="arrow" aria-hidden="true">→</span><span class={tone(lh.new.scores.performance)}>{lh.new.scores.performance}</span></dd>
+            <p>Lighthouse, {t.now} → {t.new}</p>
+          </div>
+        )}
+        {data.platform?.cms === 'WordPress' && (
+          <div>
+            <dt>{t.vulns}</dt>
+            <dd><span class={s.vulns_old ? 'bad' : 'good'}>{s.vulns_old}</span><span class="arrow" aria-hidden="true">→</span><span class="good">0</span></dd>
+            <p>{s.vulns_unauth_old} {t.unauth}</p>
+          </div>
+        )}
+      </dl>
+    </section>
+
+    {data.platform?.cms && (
+      <section class="wrap">
+        <h2>{t.platformH}</h2>
+        <p class="lead">{t.platformP}</p>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>{t.component}</th><th>{t.installed}</th><th>{t.latest}</th><th>{t.status}</th><th>{t.known}</th></tr></thead>
+            <tbody>
+              {core && (
+                <tr>
+                  <th scope="row">{t.core}</th><td>{core.version ?? '–'}</td><td>{core.latest ?? '–'}</td>
+                  <td><span class={core.outdated ? 'bad' : 'good'}>{core.outdated ? t.st.outdated : t.st.current}</span></td>
+                  <td>{core.vulnerabilities?.length || 0}</td>
+                </tr>
+              )}
+              {comps.map((c: any) => (
+                <tr>
+                  <th scope="row">{c.name}<small>{c.type === 'theme' ? t.theme : t.plugin}</small></th>
+                  <td>{c.version ?? '–'}</td>
+                  <td>{c.latest ?? '–'}</td>
+                  <td><span class={c.status === 'current' ? 'good' : c.status === 'outdated' || c.status === 'closed' ? 'bad' : ''}>{t.st[c.status as keyof typeof t.st]}</span></td>
+                  <td>
+                    {c.vulns ? <span class={c.worst === 'critical' || c.worst === 'high' ? 'bad' : 'mid'}>{c.vulns}</span> : '0'}
+                    {c.top?.[0] && <small>{c.top[0].cve ? <a href={c.top[0].link}>{c.top[0].cve}</a> : c.top[0].title} ({c.top[0].severity})</small>}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <dl class="facts">
+          {data.platform.content?.last_content_update && (<div><dt>{t.lastUpdate}</dt><dd>{data.platform.content.last_content_update} ({t.daysAgo(data.platform.content.days_since_update)})</dd></div>)}
+          {data.platform.server?.server && (<div><dt>{t.host}</dt><dd>{data.platform.server.server}{data.platform.server.php_version && `, PHP ${data.platform.server.php_version}`}</dd></div>)}
+          {data.platform.tls?.expires && (<div><dt>{t.tls}</dt><dd>{data.platform.tls.expires}</dd></div>)}
+        </dl>
+      </section>
+    )}
+
+    <section class="wrap split">
+      <div>
+        <h2>{t.headersH}</h2>
+        <ul class="ticks">
+          {headers.map(([name, h]: [string, any]) => (
+            <li><span class={h.present ? 'good' : 'bad'}>{h.present ? t.present : t.missing}</span> {t.hdr[name] ?? name}</li>
+          ))}
+        </ul>
+        {exposed.length > 0 && (<>
+          <h3>{t.exposedH}</h3>
+          <ul class="ticks">
+            {exposed.map((e: any) => (<li><span class="bad">{e.url}</span> {t.exp[e.check] ?? e.check}</li>))}
+          </ul>
+        </>)}
+        {data.third_party?.length > 0 && (<>
+          <h3>{t.thirdH}</h3>
+          <p>{t.thirdP}</p>
+          <p class="chips">{data.third_party.map((x: string) => <span>{x}</span>)}</p>
+        </>)}
+      </div>
+      <div class="panel">
+        <h2>{t.staticH}</h2>
+        <ul class="ticks">{t.staticList.map((x) => <li><span class="good" aria-hidden="true">✓</span> {x}</li>)}</ul> {/* taste-skill-ignore: checkmark glyph marks a fact list on the /seo report page */}
+      </div>
+    </section>
+
+    <section class="wrap">
+      <h2>{t.seoH}</h2>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>{t.check}</th><th>{t.now}</th><th>{t.new}</th></tr></thead>
+          <tbody>
+            {data.checks.map((r: any) => (
+              <tr>
+                <th scope="row">{r.label}{r.preview && <small>{t.previewNote}</small>}</th>
+                <td><span class={tone(r.old)}>{pct(r.old)}</span></td>
+                <td><span class={tone(r.new)}>{pct(r.new)}</span></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="note">{t.share} (0–100).</p>
+
+      <h3>{t.pagesH}</h3>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>{t.page}</th><th>{t.now}</th><th>{t.new}</th></tr></thead>
+          <tbody>
+            {data.pages.map((p: any) => (
+              <tr><th scope="row">{p.path}<small>{p.title}</small></th>
+                <td><span class={tone(p.old)}>{pct(p.old)}</span></td><td><span class={tone(p.new)}>{pct(p.new)}</span></td></tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    {lh.old && lh.new && (
+      <section class="wrap">
+        <h2>{t.lhH}</h2>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th></th><th>{t.now}</th><th>{t.new}</th></tr></thead>
+            <tbody>
+              {([['performance', t.perf], ['accessibility', t.a11y], ['best-practices', t.bp], ['seo', t.lhSeo]] as const).map(([k, label]) => (
+                <tr><th scope="row">{label}</th><td><span class={tone(lh.old.scores[k])}>{pct(lh.old.scores[k])}</span></td><td><span class={tone(lh.new.scores[k])}>{pct(lh.new.scores[k])}</span></td></tr>
+              ))}
+              <tr><th scope="row">{t.lcp}</th><td>{sec(lh.old.lcp_ms)}</td><td>{sec(lh.new.lcp_ms)}</td></tr>
+              <tr><th scope="row">{t.bytes}</th><td>{kb(lh.old.bytes)}</td><td>{kb(lh.new.bytes)}</td></tr>
+              <tr><th scope="row">{t.requests}</th><td>{lh.old.requests}</td><td>{lh.new.requests}</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    )}
+
+    <section class="wrap">
+      <h2>{t.shotsH}</h2>
+      <div class="shots">
+        {(['desktop', 'mobile'] as const).map((vp) => (
+          <div class={`shots__row shots__row--${vp}`}>
+            <figure><img src={base + data.screenshots[`old-${vp}`]} alt={`${t.before}, ${vp === 'desktop' ? t.desktop : t.mobile}`} loading="lazy" /><figcaption>{t.before} · {vp === 'desktop' ? t.desktop : t.mobile}</figcaption></figure>
+            <figure><img src={base + data.screenshots[`new-${vp}`]} alt={`${t.after}, ${vp === 'desktop' ? t.desktop : t.mobile}`} loading="lazy" /><figcaption>{t.after} · {vp === 'desktop' ? t.desktop : t.mobile}</figcaption></figure>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="wrap split">
+      {data.platform?.cms === 'WordPress' && (
+        <div>
+          <h2>{t.needsH}</h2>
+          <ul class="ticks">{t.needs.map((x) => <li><span class="mid">•</span> {x}</li>)}</ul>
+        </div>
+      )}
+      {price && (
+        <div class="panel">
+          <h2>{t.costH}</h2>
+          <table>
+            <thead><tr><th>{t.costItem}</th><th>{t.now}</th><th>{t.new}</th></tr></thead>
+            <tbody>
+              {price.rows.map((r: any) => (<tr><th scope="row">{r.item}</th><td>{r.old ?? '–'}</td><td>{r.new ?? '–'}</td></tr>))}
+              <tr class="total"><th scope="row">{t.perYear}</th><td>{total('old')} {price.currency}</td><td>{total('new')} {price.currency}</td></tr>
+            </tbody>
+          </table>
+          <p class="note">{price.note || t.costNote}</p>
+        </div>
+      )}
+    </section>
+
+    <section class="wrap method">
+      <h2>{t.methodH}</h2>
+      <p>{t.method}</p>
+    </section>
+  </main>
+</body>
+</html>
+
+<style>
+  .seo { background: var(--bg); color: var(--ink); font-family: var(--font-text); }
+  .wrap { max-width: 1200px; margin-inline: auto; padding-inline: var(--margin, 24px); }
+  .seo-top { display: flex; justify-content: space-between; gap: 16px; padding-block: 24px; font-size: var(--step-small, 15px); color: var(--muted); }
+  .seo-top a { color: var(--ink); font-weight: 600; text-decoration: none; }
+  section { padding-block: clamp(48px, 8vw, 112px) 0; }
+  section:last-child { padding-bottom: clamp(64px, 10vw, 140px); }
+  h1 { font-family: var(--font-display); font-size: clamp(2.4rem, 1.2rem + 4.6vw, 5rem); line-height: 1; letter-spacing: -0.03em; max-width: 18ch; margin: 0 0 24px; text-wrap: balance; }
+  h2 { font-family: var(--font-display); font-size: clamp(1.7rem, 1.2rem + 2vw, 2.8rem); line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 20px; text-wrap: balance; }
+  h3 { font-family: var(--font-display); font-size: 1.25rem; margin: 40px 0 12px; }
+  .lead { font-size: var(--step-lead, 1.25rem); line-height: 1.45; max-width: 52ch; margin: 0 0 32px; }
+  p, li, td, th { font-size: var(--step-body, 1.0625rem); line-height: 1.5; }
+  .figures { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--gutter, 24px); margin: 48px 0 0; }
+  .figures > div { background: var(--surface); border-radius: var(--radius, 0); padding: 28px; }
+  .figures dt { font-weight: 600; }
+  .figures dd { margin: 12px 0 8px; font-family: var(--font-display); font-size: clamp(2.6rem, 2rem + 2.5vw, 4.2rem); line-height: 1; letter-spacing: -0.03em; display: flex; align-items: baseline; gap: 14px; font-variant-numeric: tabular-nums; }
+  .figures p { margin: 0; color: var(--muted); }
+  .arrow { color: var(--muted); font-size: 0.5em; }
+  .good { color: var(--ok, #1f7a4a); } .mid { color: var(--mid, #9a6a00); } .bad { color: var(--risk, #b3261e); }
+  td .good, td .mid, td .bad, .ticks .good, .ticks .mid, .ticks .bad { font-weight: 600; }
+  .table-scroll { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+  th, td { text-align: left; padding: 14px 16px 14px 0; vertical-align: top; }
+  thead th { font-weight: 600; color: var(--muted); padding-bottom: 8px; }
+  tbody tr:nth-child(odd) { background: var(--surface); }
+  tbody th { font-weight: 500; padding-left: 12px; }
+  thead th:first-child { padding-left: 12px; }
+  small { display: block; color: var(--muted); font-size: var(--step-small, 0.875rem); font-weight: 400; margin-top: 2px; }
+  small a { color: inherit; }
+  tr.total th, tr.total td { font-weight: 700; }
+  .facts { display: flex; flex-wrap: wrap; gap: 16px 48px; margin: 32px 0 0; }
+  .facts dt { color: var(--muted); } .facts dd { margin: 4px 0 0; font-weight: 600; }
+  .split { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(32px, 6vw, 96px); align-items: start; }
+  .panel { background: var(--surface); border-radius: var(--radius, 0); padding: clamp(24px, 4vw, 48px); }
+  .ticks { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+  .ticks li { display: grid; grid-template-columns: max-content 1fr; gap: 12px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chips span { background: var(--surface); padding: 6px 12px; border-radius: 999px; }
+  .note { color: var(--muted); font-size: var(--step-small, 0.9rem); }
+  .shots { display: grid; gap: 40px; }
+  .shots__row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gutter, 24px); align-items: start; }
+  .shots__row--mobile { grid-template-columns: repeat(2, minmax(0, 320px)); }
+  .shots figure { margin: 0; max-height: 900px; overflow: hidden; background: var(--surface); }
+  .shots img { width: 100%; height: auto; display: block; }
+  figcaption { padding: 10px 12px; color: var(--muted); background: var(--bg); }
+  .method p { max-width: 70ch; color: var(--muted); }
+  @media (max-width: 760px) {
+    .split, .shots__row { grid-template-columns: 1fr; }
+    .shots__row--mobile { grid-template-columns: 1fr 1fr; }
+    th, td { padding-right: 10px; }
+  }
+</style>

@@ -1,0 +1,64 @@
+---
+import Base from '../../layouts/Base.astro';
+import Pic from '../../components/Pic.astro';
+import { breadcrumb } from '../../data/site';
+import consult from '../../assets/original/consult-doctor-child.jpg';
+const B = import.meta.env.BASE_URL;
+const jsonld = [breadcrumb([
+  { name: 'Hjem', path: '/' },
+  { name: 'Afhængighedsskabende medicin', path: '/afhaengighedsskabende-medicin/' },
+])];
+const medicines = ['Morfin og morfinlignende midler (opioide analgetika)','Beroligende midler og sovemidler, herunder særligt benzodiazepiner og stoffer, der virker på benzodiazepinreceptorerne','Lægemidler med centralstimulerende virkning','Visse andre lægemidler med afhængigheds-/misbrugspotentiale'];
+const links = [
+  { label: 'Vejledning om ordination, VEJ nr. 9009 (27.12.2013)', href: 'https://www.retsinformation.dk/pdfPrint.aspx?id=160914' },
+  { label: 'Helbredskrav til kørekort (Styrelsen for Patientsikkerhed, 2017, kap. 9)', href: 'https://stps.dk/da/udgivelser/2017/vejledning-om-helbredskrav-til-koerekort/~/media/9BE267FAC6AE4BE3ABB93FAA6E7C2347.ashx' },
+];
+---
+<Base title="Afhængighedsskabende medicin – fokus på nedtrapning"
+      description="Almen Lægeklinik Skælskør har stor fokus på forbruget af afhængighedsskabende medicin. Fornyelse kun ved personligt fremmøde og veltilrettelagt nedtrapning."
+      path="/afhaengighedsskabende-medicin/" image={consult} jsonld={jsonld} current="/afhaengighedsskabende-medicin/">
+
+  <header class="page-head">
+    <div class="wrap ph-inner">
+      <p class="ph-crumb"><a class="link" href={`${B}`}>Hjem</a> · Afhængighedsskabende medicin</p>
+      <h1>Afhængighedsskabende medicin</h1>
+      <p class="ph-sub">Et særligt indsatsområde: solidt og veltilrettelagt nedtrapnings- eller seponeringsforløb.</p>
+    </div>
+  </header>
+
+  <section class="prose wrap">
+    <div class="block" data-reveal>
+      <div class="block-body">
+        <h2>Særlig fokus</h2>
+        <p>Styrelsen for Patientsikkerhed og Almen Lægeklinik Skælskør har stor fokus på forbruget af afhængighedsskabende medicin. Forbruget har været stigende i Danmark, og hos os har vi altid haft det som et særligt indsatsområde at sikre et solidt og veltilrettelagt nedtrapnings- eller seponeringsforløb for patienter med non-maligne smerter på afhængighedsskabende medicin. Hensigten er – hvor det er muligt – udtrapning af brugen på kort eller lang sigt.</p>
+        <p>Ifølge Styrelsen for Patientsikkerhed må fornyelse af afhængighedsskabende medicin til patienter med non-maligne smerter <strong>kun ske ved personligt fremmøde</strong> i klinikken – ikke over telefon eller internet. Kontakt klinikken telefonisk og bestil en konsultationstid til receptfornyelse. Vær selv opmærksom på at have medicin til klinikkens lukkedage.</p>
+      </div>
+      <figure class="block-visual">
+        <Pic src={consult} alt="En læge taler grundigt med en patient om behandling" width={2200} height={1466} />
+        <figcaption class="cap">Fornyelse af afhængighedsskabende medicin kræver fremmøde.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section wrap" data-reveal>
+    <h2 class="head">Afhængighedsskabende lægemidler</h2>
+    <p class="measure" style="margin:0.8rem 0 1rem;">Ved afhængighedsskabende lægemidler forstås:</p>
+    <ul style="display:flex;flex-direction:column;gap:0.7rem;list-style:none;padding:0;max-width:52ch;">
+      {medicines.map((m) => <li style="display:grid;grid-template-columns:auto 1fr;gap:0.7rem;align-items:start;"><span aria-hidden="true" style="width:0.6rem;height:0.6rem;border-radius:50%;background:var(--accent);margin-top:0.5rem;"></span><span>{m}</span></li>)}
+    </ul>
+  </section>
+
+  <section class="section wrap" data-reveal>
+    <h2 class="head">Udtrapning for patientens egen skyld</h2>
+    <p class="measure">De mest almindelige bivirkninger ved sovemedicin og angstdæmpende beroligende medicin er svimmelhed, døsighed, hukommelsesbesvær samt koncentrationsbesvær. De fleste patienter på afhængighedsskabende medicin bemærker ikke, at de er påvirkede af langtidsbrug. Brat ophør af medicinen kan give abstinenser – et tegn på, at patienten er afhængig.</p>
+    <p>De mest almindelige abstinenssymptomer er angst, uro, svedeture og søvnbesvær. Det er derfor vigtigt, at man gennemgår en <strong>langsom nedtrapning</strong> af behandlingen.</p>
+  </section>
+
+  <section class="section wrap" data-reveal>
+    <h2 class="head">Forstå årsagen til fratagelse af kørekort</h2>
+    <p class="measure">Der er risiko for påvirkning af bevidstheden ved brug af stærk smertestillende medicin. Derfor må man ikke køre bil eller lignende ved indtagelse af stærk smertestillende medicin med kort virkningstid. Patienten kan undgå kørselsforbud, hvis der udelukkende indtages præparater med <strong>lang virkningstid</strong>.</p>
+    <div class="reflinks">
+      {links.map((l) => <a href={l.href} rel="noopener" target="_blank">{l.label}</a>)}
+    </div>
+  </section>
+</Base>

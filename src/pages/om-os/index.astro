@@ -1,0 +1,71 @@
+---
+import Base from '../../layouts/Base.astro';
+import Pic from '../../components/Pic.astro';
+import { breadcrumb } from '../../data/site';
+import smile from '../../assets/original/consult-doctor-smile.jpg';
+import building from '../../assets/original/building-16-9.jpg';
+const B = import.meta.env.BASE_URL;
+const jsonld = [breadcrumb([
+  { name: 'Hjem', path: '/' },
+  { name: 'Om os', path: '/om-os/' },
+])];
+---
+<Base title="Om os – faste læger og sygeplejersker i Skælskør"
+      description="Mød et fast team af læger og sygeplejersker hos Almen Lægeklinik Skælskør. Læs om vores team, tilgang og den trygge behandling i Gammelgade 10."
+      path="/om-os/" image={smile} jsonld={jsonld} current="/om-os/">
+
+  <header class="page-head">
+    <div class="wrap ph-inner">
+      <p class="ph-crumb"><a class="link" href={`${B}`}>Hjem</a> · Om os</p>
+      <h1>Om Almen Lægeklinik Skælskør</h1>
+      <p class="ph-sub">Et fast team, der arbejder tæt sammen – så du oplever kontinuitet og mødes af dit faste sundhedspersonale.</p>
+    </div>
+  </header>
+
+  <section class="prose wrap">
+    <div class="block" data-reveal>
+      <div class="block-body">
+        <h2>Et fast team i Skælskør</h2>
+        <p>Hos Almen Lægeklinik Skælskør møder du et fast team af læger og sygeplejersker, der arbejder tæt sammen for at sikre dig en tryg og kompetent behandling. Vi gør os umage for, at du som patient oplever kontinuitet og bliver mødt af dit faste sundhedspersonale, når det er muligt.</p>
+        <p>Ved akutte behov hjælper vi dig hurtigt videre til den første ledige behandler – det kan være en af vores faste læger, sygeplejersker eller vores erfarne lægevikarer.</p>
+      </div>
+      <figure class="block-visual">
+        <Pic src={smile} alt="En læge undersøger en smilende pige med stetoskop" width={2560} height={1556} />
+        <figcaption class="cap">Konsultation hos os – tryg og kompetent behandling.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="team section" data-reveal>
+    <div class="wrap">
+      <div class="block team-split">
+        <div class="team-card">
+          <h2 class="head">Vores team</h2>
+          <p>Vi er stolte af at have et dygtigt og dedikeret personale, der hver dag arbejder for dit helbred og din trivsel. Sygeplejerskerne udfører både assisterende og selvstændige konsultationer inden for deres sundhedsfaglige kompetenceområder. Vi prioriterer høj faglighed, efteruddannelse og teamwork – alt sammen for at give dig den bedst mulige oplevelse.</p>
+          <div class="team-list">
+            <div class="member"><p class="role">Læge</p><p class="name">Olga</p></div>
+            <div class="member"><p class="role">Sygeplejersker</p><p class="name">Sana &amp; Ninna</p></div>
+          </div>
+        </div>
+        <figure class="block-visual">
+          <img src={`${B}images/building.jpg`} alt="Klinikbygningen på Gammelgade 10 i Skælskør" width="2200" height="1236" loading="lazy" />
+          <figcaption class="cap">Gammelgade 10, 4230 Skælskør.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="prose wrap" data-reveal>
+    <div class="block flip">
+      <div class="block-body">
+        <h2>Vores tilgang</h2>
+        <p>Hos os handler det om mere end behandling. Vi ønsker, at du føler dig velkommen, set og tryg – hver gang du besøger klinikken. Vi tror på, at det skaber de bedste rammer for et godt og tillidsfuldt samarbejde mellem patient og behandler.</p>
+        <p><a class="button" href="tel:+4569161433" style="margin-top:1rem;">Ring 69 16 14 33</a></p>
+      </div>
+      <figure class="block-visual">
+        <Pic src={building} alt="Klinikbygningen på Gammelgade 10 i Skælskør" width={1667} height={937} />
+        <figcaption class="cap">Gammelgade 10, 4230 Skælskør.</figcaption>
+      </figure>
+    </div>
+  </section>
+</Base>

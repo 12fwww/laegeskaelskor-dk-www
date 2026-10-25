@@ -1,0 +1,59 @@
+---
+import Base from '../../layouts/Base.astro';
+import Pic from '../../components/Pic.astro';
+import { breadcrumb } from '../../data/site';
+import building from '../../assets/original/building-16-9.jpg';
+import brick from '../../assets/original/brick-closeup.jpg';
+const B = import.meta.env.BASE_URL;
+const jsonld = [breadcrumb([
+  { name: 'Hjem', path: '/' },
+  { name: 'Henvisninger & kronikerkontrol', path: '/henvisninger-kronikerkontrol/' },
+])];
+const conditions = ['forhøjet blodtryk','forhøjet kolesterol','sukkeryge','stofskifte','KOL (kronisk obstruktiv lungelidelse)','astma','knogleskørhed / osteoporose','psykisk sygdom'];
+---
+<Base title="Henvisninger og kronikerkontrol"
+      description="Henvisninger udfærdiges ved fremmøde og sendes elektronisk. Kronikerkontrol med kvartårlig sygeplejerskekontrol og årlig lægekontrol. Almen Lægeklinik Skælskør."
+      path="/henvisninger-kronikerkontrol/" image={building} jsonld={jsonld} current="/henvisninger-kronikerkontrol/">
+
+  <header class="page-head">
+    <div class="wrap ph-inner">
+      <p class="ph-crumb"><a class="link" href={`${B}`}>Hjem</a> · Henvisninger &amp; kronikerkontrol</p>
+      <h1>Henvisninger og kronikerkontrol</h1>
+      <p class="ph-sub">Henvisning til speciallæge eller fysioterapeut, og fast kontrol ved kroniske lidelser.</p>
+    </div>
+  </header>
+
+  <section class="prose wrap">
+    <div class="block" data-reveal>
+      <div class="block-body">
+        <h2>Henvisninger</h2>
+        <p>Henvisninger kræver fremmøde til lægekonsultation og udfærdiges derfor ikke efter anmodning per internet eller telefon. Hvis lægen vurderer det relevant, udfærdiges henvisning til fysioterapeut, psykolog, speciallæge, sygehus m.m.</p>
+        <p>Henvisningen sendes elektronisk. Som borger bestiller du selv tid hos fysioterapeut, psykolog eller speciallæge, og henvisningen skal tages i brug <strong>inden for 6 måneder</strong>.</p>
+      </div>
+      <figure class="block-visual">
+        <Pic src={building} alt="Klinikbygningen på Gammelgade 10 i Skælskør" width={1667} height={937} />
+        <figcaption class="cap">Henvisning udfærdiges ved personligt fremmøde.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section wrap" data-reveal>
+    <h2 class="head">Kronikerkontrol</h2>
+    <p class="measure" style="margin:0.8rem 0 1.2rem;">Er du i behandling for en kronisk lidelse, anbefales ofte en <strong>kvartårlig kontrol ved sygeplejerske</strong> og en <strong>årlig kontrol ved læge</strong> – ofte forudgået af blodprøver, EKG og lungefunktionsundersøgelse.</p>
+    <p class="muted small" style="margin-bottom:0.8rem;">Det gælder blandt andet:</p>
+    <ul style="display:flex;flex-wrap:wrap;gap:0.5rem;list-style:none;padding:0;">
+      {conditions.map((c) => <li style="background:var(--surface);border-radius:999px;padding:0.4rem 0.9rem;font-size:var(--step-small);">{c}</li>)}
+    </ul>
+    <p style="margin-top:1.4rem;">Kontakt din klinik for bestilling af tid til opfølgning og evt. blodprøver.</p>
+    <div class="reflinks">
+      <a href="tel:+4569161433">Ring 69 16 14 33 for tidsbestilling</a>
+    </div>
+  </section>
+
+  <section class="prose wrap" data-reveal>
+    <figure class="block-visual" style="max-width:60rem;">
+      <Pic src={brick} alt="Klinikbygningens røde teglfacade set tæt på" width={2560} height={1920} />
+      <figcaption class="cap">Vores klinik i Skælskørs centrum.</figcaption>
+    </figure>
+  </section>
+</Base>

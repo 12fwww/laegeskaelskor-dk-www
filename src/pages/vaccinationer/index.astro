@@ -1,0 +1,88 @@
+---
+import Base from '../../layouts/Base.astro';
+import Pic from '../../components/Pic.astro';
+import { breadcrumb, clinic } from '../../data/site';
+import smile from '../../assets/original/consult-doctor-smile.jpg';
+import building from '../../assets/original/building-16-9.jpg';
+const B = import.meta.env.BASE_URL;
+const jsonld = [breadcrumb([
+  { name: 'Hjem', path: '/' },
+  { name: 'Vaccinationer', path: '/vaccinationer/' },
+])];
+const schedule = [
+  ['3 mdr.', 'Difteri-tetanus-kighoste-polio-Hib 1 og PCV-1'],
+  ['5 mdr.', 'Difteri-tetanus-kighoste-polio-Hib 2 og PCV-2'],
+  ['12 mdr.', 'Difteri-tetanus-kighoste-polio-Hib 3 og PCV-3'],
+  ['15 mdr.', 'MFR 1'],
+  ['4 år', 'MFR 2'],
+  ['5 år', 'Difteri-tetanus-kighoste-polio revaccination'],
+  ['12 år', 'HPV 1 og 2 til drenge og piger'],
+];
+const travelFactors = ['den rejsendes alder','den rejsendes helbredsforhold','rejsemål (land/by, rækkefølge)','rejsens længde','rejse måde (charter, erhvervsrejse, rygsæksrejse m.m.)','rejseadfærd (kontakt til dyr, tæt kontakt til lokalbefolkningen, seksuel kontakt m.m.)'];
+---
+<Base title="Vaccinationer – rejse-, børn- og HPV-vaccination"
+      description="Rejse-, børn- og HPV-vaccination hos Almen Lægeklinik Skælskør. Konsultation to måneder inden rejse, HPV til drenge og piger, og det danske børnevaccinationsprogram."
+      path="/vaccinationer/" image={smile} jsonld={jsonld} current="/vaccinationer/">
+
+  <header class="page-head">
+    <div class="wrap ph-inner">
+      <p class="ph-crumb"><a class="link" href={`${B}`}>Hjem</a> · Vaccinationer</p>
+      <h1>Vaccinationer</h1>
+      <p class="ph-sub">Rejse-, børn- og HPV-vaccination – med god tid til råd og vejledning.</p>
+    </div>
+  </header>
+
+  <section class="prose wrap">
+    <div class="block" data-reveal>
+      <div class="block-body">
+        <h2>Rejsevaccinationer</h2>
+        <p>Ved udlandsrejse skal der helst ske henvendelse til din klinik til en konsultation <strong>to måneder inden afrejse</strong>, for råd og vejledning. Det er vigtigt at vide, hvilke smitsomme sygdomme der findes på rejsemålet, hvordan de smitter og forebygges, og at du kontakter lægen i god tid – så der er tid til en forebyggende samtale, de nødvendige vacciner og eventuelt medicin.</p>
+        <p>Almen Lægeklinik Skælskør kan yde rådgivning ud fra:</p>
+        <ul style="display:flex;flex-wrap:wrap;gap:0.5rem;list-style:none;padding:0;margin:0.8rem 0;">
+          {travelFactors.map((f) => <li style="background:var(--surface);border-radius:999px;padding:0.4rem 0.9rem;font-size:var(--step-small);">{f}</li>)}
+        </ul>
+        <p>For nogle grupper – fx gravide, børn, ældre, kronisk syge og immunsvækkede – kan der være særlige forhold ved rejsen, der kræver en lægelig vurdering.</p>
+      </div>
+      <figure class="block-visual">
+        <Pic src={smile} alt="En læge taler med en ung patient om vaccination" width={2560} height={1556} />
+        <figcaption class="cap">Rådgivning om rejsevaccination – tidligt og i god tid.</figcaption>
+      </figure>
+    </div>
+    <div class="reflinks">
+      <a href="http://www.ssi.dk/Vaccination/Rejsevaccinationer.aspx" rel="noopener" target="_blank">SSI rejsevaccinationsguide</a>
+    </div>
+  </section>
+
+  <section class="section wrap" data-reveal>
+    <h2 class="head">Børnevaccination</h2>
+    <p class="measure" style="margin:0.8rem 0 1.6rem;">Vi tilbyder <strong>HPV-vaccination til både drenge og piger</strong>. Du kan læse mere om børnevaccinationsprogrammet i Danmark via Statens Serum Institut.</p>
+    <div class="tbl-scroll">
+      <table class="tbl">
+        <caption>Det danske børnevaccinationsprogram – alder og vaccination</caption>
+        <thead><tr><th scope="col">Alder</th><th scope="col">Vaccination</th></tr></thead>
+        <tbody>
+          {schedule.map((row) => <tr><th scope="row">{row[0]}</th><td>{row[1]}</td></tr>)}
+        </tbody>
+      </table>
+    </div>
+    <div class="reflinks">
+      <a href="https://www.ssi.dk/vaccinationer/børnevaccination" rel="noopener" target="_blank">SSI børnevaccinationsprogram</a>
+    </div>
+  </section>
+
+  <section class="prose wrap" data-reveal>
+    <div class="block flip">
+      <div class="block-body">
+        <h2>Influenzavaccination</h2>
+        <p>Vi tilbyder <strong>ikke</strong> influenzavaccination. Kontakt Regionens vaccinationssteder, eller se yderligere information på vacciner.dk.</p>
+      </div>
+      <figure class="block-visual">
+        <Pic src={building} alt="Klinikbygningen på Gammelgade 10 i Skælskør" width={1667} height={937} />
+        <figcaption class="cap">Gammelgade 10, 4230 Skælskør.</figcaption>
+      </figure>
+    </div>
+    <div class="reflinks">
+      <a href="https://www.vacciner.dk" rel="noopener" target="_blank">vacciner.dk</a>
+    </div>
+  </section>
+</Base>

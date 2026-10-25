@@ -1,0 +1,46 @@
+---
+import Base from '../../layouts/Base.astro';
+import Pic from '../../components/Pic.astro';
+import { breadcrumb, clinic } from '../../data/site';
+import consult from '../../assets/original/consult-doctor-child.jpg';
+const B = import.meta.env.BASE_URL;
+const jsonld = [breadcrumb([
+  { name: 'Hjem', path: '/' },
+  { name: 'Selvbetjening', path: '/selvbetjening/' },
+])];
+---
+<Base title="Selvbetjening – medicinbestilling og e-konsultation"
+      description="Bestil fast medicin, få receptfornyelser og e-konsultation via Lægevejen hos Almen Lægeklinik Skælskør. Vi godkender dagligt, så medicinen er klar næste hverdag."
+      path="/selvbetjening/" image={consult} jsonld={jsonld} current="/selvbetjening/">
+
+  <header class="page-head">
+    <div class="wrap ph-inner">
+      <p class="ph-crumb"><a class="link" href={`${B}`}>Hjem</a> · Selvbetjening</p>
+      <h1>Selvbetjening</h1>
+      <p class="ph-sub">Medicinbestilling og e-konsultation – online eller ved konsultation. Vi godkender dagligt.</p>
+    </div>
+  </header>
+
+  <section class="prose wrap">
+    <div class="block" data-reveal>
+      <div class="block-body">
+        <p class="lead">Tryk på “Selvbetjening”, og du har som patient mulighed for <strong>medicinbestilling</strong> og <strong>e-konsultation</strong>.</p>
+        <h2>Medicinbestilling</h2>
+        <p>Medicinbestilling kan ske gennem telefon, konsultation eller via internettet på <a class="link" href="https://www.laegvejen.dk" rel="noopener" target="_blank">lægevejen.dk</a>. Bestiller du via internettet, går bestillingen videre til godkendelse hos os. Vi godkender bestillingerne dagligt, og medicinen er som regel klar til afhentning næste hverdag.</p>
+        <p>Fast medicin kan også bestilles via siden – <strong>dog ikke</strong> angstdæmpende-, morfika- og sovemedicin.</p>
+        <h2 style="margin-top:2rem;">Receptfornyelser</h2>
+        <p>Klinikken kan i de fleste tilfælde forny recepter på fast medicin – men <strong>aldrig</strong> på afhængighedsskabende medicin. Recepter fra egen læge, speciallæge og sygehus gælder to år og slettes derefter automatisk, hvis de er ubrugte. Recepter fra vagtlæge slettes efter syv dage, hvis de er ubrugte.</p>
+        <h2 style="margin-top:2rem;">E-konsultation</h2>
+        <p>Opret dig selv på Lægevejen via <a class="link" href="https://www.lægevejen.dk/Login/OpretBrugerUdenNemId" rel="noopener" target="_blank">registreringslinket</a> eller ved personligt fremmøde i klinikken. På lægevejen.dk kan du stille enkle og konkrete spørgsmål til os og modtage svar.</p>
+      </div>
+      <figure class="block-visual">
+        <Pic src={consult} alt="Læge og barn under en e-konsultation i klinikken" width={2200} height={1466} />
+        <figcaption class="cap">E-konsultation – still os et spørgsmål via Lægevejen.</figcaption>
+      </figure>
+    </div>
+    <div class="reflinks">
+      <a href="https://www.laegevejen.dk/Login" rel="noopener" target="_blank">Lægevejen – log ind</a>
+      <a href="https://www.lægevejen.dk/Login/OpretBrugerUdenNemId" rel="noopener" target="_blank">Opret dig som bruger</a>
+    </div>
+  </section>
+</Base>

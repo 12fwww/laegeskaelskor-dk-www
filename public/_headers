@@ -1,0 +1,15 @@
+# Security headers for the production host. Copy to public/_headers.
+# Read by Cloudflare Pages and Netlify. GitHub Pages ignores it (it cannot set
+# headers), so the customer's real domain should be served from one of those.
+# The CSP allows only this site's own files: if a page embeds YouTube, a map or
+# a font CDN, add that origin here and re-test, or the embed goes blank.
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self' mailto:
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable

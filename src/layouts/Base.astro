@@ -1,0 +1,119 @@
+---
+import '../styles/global.css';
+import SeoHead from '../components/SeoHead.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  path: string;
+  image?: import('astro').ImageMetadata;
+  jsonld?: object[];
+  type?: 'website' | 'article';
+  current?: string;
+}
+const { title, description, path, image, jsonld, type = 'website', current = '' } = Astro.props;
+const B = import.meta.env.BASE_URL;
+const telHref = 'tel:+4569161433';
+const nav = [
+  { path: '/', label: 'Hjem' },
+  { path: '/om-os/', label: 'Om os' },
+  { path: '/selvbetjening/', label: 'Selvbetjening' },
+  { path: '/vaccinationer/', label: 'Vaccinationer' },
+  { path: '/henvisninger-kronikerkontrol/', label: 'Henvisninger & kroniker' },
+  { path: '/kontakt-os/', label: 'Kontakt' },
+];
+---
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href={`${B}images/ikon-nm.png`} />
+    <SeoHead {title} {description} {path} {image} {jsonld} {type} />
+  </head>
+  <body>
+    <a class="skip" href="#main">Gå til indholdet</a>
+    <header class="site-head">
+      <div class="wrap head-inner">
+        <a class="brand" href={`${B}`} aria-label="Almen Lægeklinik Skælskør – forside">
+          <img src={`${B}images/nmlogo.png`} alt="Almen Lægeklinik Skælskør logo" width="150" height="65" />
+          <span class="brand-name">Lægeklinik Skælskør<span class="brand-sub">Gammelgade 10</span></span>
+        </a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <nav class="site-nav" id="primary-nav" aria-label="Primær menu">
+          {nav.map((n) => (
+            <a href={`${B}${n.path}`} aria-current={current === n.path ? 'page' : undefined}>{n.label}</a>
+          ))}
+          <a class="nav-cta" href={telHref}>69 16 14 33</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <footer class="site-foot">
+      <div class="wrap">
+        <div class="foot-grid">
+          <div>
+            <div class="foot-name"><img src={`${B}images/nmlogo.png`} alt="" width="150" height="65" /><span>Almen Lægeklinik Skælskør</span></div>
+            <p class="small" style="color:#9aa6b1; margin-top:1rem;">Praktiserende lægeklinik i Skælskørs centrum – et fast team af læger og sygeplejersker, som en del af det offentlige sundhedsvæsen.</p>
+          </div>
+          <div>
+            <h3>Få fat i os</h3>
+            <ul>
+              <li>Gammelgade 10, 4230 Skælskør</li>
+              <li>Man–fre 8:00–16:00</li>
+              <li><a href={telHref}>Telefon 69 16 14 33</a></li>
+              <li><a href="https://www.laegevejen.dk/Login" rel="noopener" target="_blank">Lægevejen (selvbetjening)</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Sider</h3>
+            <ul>
+              <li><a href={`${B}om-os/`}>Om os</a></li>
+              <li><a href={`${B}selvbetjening/`}>Selvbetjening</a></li>
+              <li><a href={`${B}vaccinationer/`}>Vaccinationer</a></li>
+              <li><a href={`${B}afhaengighedsskabende-medicin/`}>Afhængighedsskabende medicin</a></li>
+              <li><a href={`${B}henvisninger-kronikerkontrol/`}>Henvisninger &amp; kronikerkontrol</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="foot-base">
+          <span>© {new Date().getFullYear()} Almen Lægeklinik Skælskør</span>
+          <span>Behandling via det offentlige system · gruppe 1 &amp; 2</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const head = document.querySelector('.site-head');
+      const btn = document.querySelector('.nav-toggle');
+      const nav = document.getElementById('primary-nav');
+      btn?.addEventListener('click', () => {
+        const open = head.classList.toggle('nav-open');
+        btn.setAttribute('aria-expanded', String(open));
+      });
+      nav?.addEventListener('click', (e) => {
+        if (e.target instanceof HTMLAnchorElement) {
+          head.classList.remove('nav-open');
+          btn?.setAttribute('aria-expanded', 'false');
+        }
+      });
+      // Progressive reveal: content is visible without JS; this only adds the rise once in view.
+      const els = document.querySelectorAll('[data-reveal]');
+      if ('IntersectionObserver' in window && matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+        document.documentElement.classList.add('js');
+        const io = new IntersectionObserver((entries) => {
+          for (const en of entries) {
+            if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); }
+          }
+        }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
+        els.forEach((el) => io.observe(el));
+      }
+    </script>
+  </body>
+</html>
