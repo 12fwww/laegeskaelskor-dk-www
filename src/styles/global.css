@@ -201,7 +201,7 @@ p + p { margin-top: 0.95em; }
 /* ---------- hours board (framed notice) ---------- */
 .hours { background: var(--surface); }
 .hours .wrap { max-width: 64rem; margin-inline: auto; }
-.hours-board { background: #fff; border-radius: var(--radius); padding: clamp(1.5rem, 4vw, 3rem); transform: rotate(-0.6deg); }
+.hours-board { background: #fff; border-radius: var(--radius); padding: clamp(1.5rem, 4vw, 3rem); }
 .hours-board .hb-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.4rem; }
 .hours-board h3 { font-size: 1.5rem; font-family: var(--font-display); }
 .hours-board .hb-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gutter); }
