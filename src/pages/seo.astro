@@ -145,27 +145,27 @@ const total = (key: 'old' | 'new') => (price?.rows || []).reduce((a: number, r: 
     <section class="wrap seo-hero">
       <h1>{t.title}</h1>
       <p class="lead">{t.intro(host(data.original))}</p>
-      <dl class="figures">
-        <div>
-          <dt>{t.seo}</dt>
-          <dd><span class={tone(s.seo_old)}>{pct(s.seo_old)}</span><span class="arrow" aria-hidden="true">→</span><span class={tone(s.seo_new)}>{pct(s.seo_new)}</span></dd>
-          <p>{t.now} → {t.new}</p>
+      <div class="figures">
+        <div class="fig">
+          <p class="fig-k">{t.seo}</p>
+          <p class="fig-v"><span class={tone(s.seo_old)}>{pct(s.seo_old)}</span><span class="arrow" aria-hidden="true">→</span><span class={tone(s.seo_new)}>{pct(s.seo_new)}</span></p>
+          <p class="fig-s">{t.now} → {t.new}</p>
         </div>
         {lh.old && lh.new && (
-          <div>
-            <dt>{t.speed}</dt>
-            <dd><span class={tone(lh.old.scores.performance)}>{lh.old.scores.performance}</span><span class="arrow" aria-hidden="true">→</span><span class={tone(lh.new.scores.performance)}>{lh.new.scores.performance}</span></dd>
-            <p>Lighthouse, {t.now} → {t.new}</p>
+          <div class="fig">
+            <p class="fig-k">{t.speed}</p>
+            <p class="fig-v"><span class={tone(lh.old.scores.performance)}>{lh.old.scores.performance}</span><span class="arrow" aria-hidden="true">→</span><span class={tone(lh.new.scores.performance)}>{lh.new.scores.performance}</span></p>
+            <p class="fig-s">Lighthouse, {t.now} → {t.new}</p>
           </div>
         )}
         {data.platform?.cms === 'WordPress' && (
-          <div>
-            <dt>{t.vulns}</dt>
-            <dd><span class={s.vulns_old ? 'bad' : 'good'}>{s.vulns_old}</span><span class="arrow" aria-hidden="true">→</span><span class="good">0</span></dd>
-            <p>{s.vulns_unauth_old} {t.unauth}</p>
+          <div class="fig">
+            <p class="fig-k">{t.vulns}</p>
+            <p class="fig-v"><span class={s.vulns_old ? 'bad' : 'good'}>{s.vulns_old}</span><span class="arrow" aria-hidden="true">→</span><span class="good">0</span></p>
+            <p class="fig-s">{s.vulns_unauth_old} {t.unauth}</p>
           </div>
         )}
-      </dl>
+      </div>
     </section>
 
     {data.platform?.cms && (
@@ -338,10 +338,10 @@ const total = (key: 'old' | 'new') => (price?.rows || []).reduce((a: number, r: 
   .lead { font-size: var(--step-lead, 1.25rem); line-height: 1.45; max-width: 52ch; margin: 0 0 32px; }
   p, li, td, th { font-size: var(--step-body, 1.0625rem); line-height: 1.5; }
   .figures { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--gutter, 24px); margin: 48px 0 0; }
-  .figures > div { background: var(--surface); border-radius: var(--radius, 0); padding: 28px; }
-  .figures dt { font-weight: 600; }
-  .figures dd { margin: 12px 0 8px; font-family: var(--font-display); font-size: clamp(2.6rem, 2rem + 2.5vw, 4.2rem); line-height: 1; letter-spacing: -0.03em; display: flex; align-items: baseline; gap: 14px; font-variant-numeric: tabular-nums; }
-  .figures p { margin: 0; color: var(--muted); }
+  .figures > .fig { background: var(--surface); border-radius: var(--radius, 0); padding: 28px; }
+  .fig-k { font-weight: 600; margin: 0; }
+  .fig-v { margin: 12px 0 8px; font-family: var(--font-display); font-size: clamp(2.6rem, 2rem + 2.5vw, 4.2rem); line-height: 1; letter-spacing: -0.03em; display: flex; align-items: baseline; gap: 14px; font-variant-numeric: tabular-nums; }
+  .fig-s { margin: 0; color: var(--muted); }
   .arrow { color: var(--muted); font-size: 0.5em; }
   .good { color: var(--ok, #1f7a4a); } .mid { color: var(--mid, #7a5600); } .bad { color: var(--risk, #b3261e); }
   td .good, td .mid, td .bad, .ticks .good, .ticks .mid, .ticks .bad { font-weight: 600; }
