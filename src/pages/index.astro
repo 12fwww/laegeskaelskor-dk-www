@@ -38,19 +38,17 @@ const updates = [
 
   <section class="section wrap" data-reveal>
     <h2 class="head" style="margin-bottom: 2.4rem;">Vi hjælper med</h2>
-    <div class="rows">
-      <div class="rowlist">
-        {services.map((s) => (
-          <div class="row" data-reveal>
+    <div class="svc-grid">
+      {services.map((s) => (
+        <div class="svc" data-reveal>
+          <figure class="svc-img"><Pic src={s.img} alt={s.alt} width={2200} height={1466} /></figure>
+          <div class="svc-body">
             <h3>{s.title}</h3>
             <p>{s.text}</p>
             <p><a class="link" href={`${B}${s.href}`}>Læs mere</a></p>
           </div>
-        ))}
-      </div>
-      <figure class="row-img">
-        <Pic src={consult} alt="En læge taler med en patient under en konsultation" width={2200} height={1466} sizes="(min-width:56rem) 5fr, 100vw" />
-      </figure>
+        </div>
+      ))}
     </div>
   </section>
 
