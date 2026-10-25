@@ -81,8 +81,8 @@ p + p { margin-top: 0.95em; }
 .field-petrol .petrol-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(2rem, 6vw, 5rem); align-items: center; }
 .field-petrol .petrol-body .lead { max-width: 52ch; }
 .field-petrol .petrol-note { margin-top: 1.4rem; max-width: 52ch; }
-.field-petrol .petrol-img { margin: 0; overflow: hidden; border-radius: var(--radius); }
-.field-petrol .petrol-img img { width: 100%; height: 100%; object-fit: cover; display: block; min-height: 100%; }
+.field-petrol .petrol-img { margin: 0; overflow: hidden; border-radius: var(--radius); height: 100%; }
+.field-petrol .petrol-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
 @media (max-width: 56rem) { .field-petrol .petrol-grid { grid-template-columns: 1fr; } .field-petrol .petrol-img { order: -1; aspect-ratio: 16 / 10; } }
 .bleed { margin-inline: calc(var(--wrap-pad) * -1); }
 .cover { width: 100%; height: 100%; object-fit: cover; }
