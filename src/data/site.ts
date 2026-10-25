@@ -22,7 +22,7 @@ export const clinic = {
 
 export const localBusinessJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'MedicalClinic',
+  '@type': ['MedicalClinic', 'LocalBusiness', 'Organization'],
   name: 'Almen Lægeklinik Skælskør',
   medicalSpecialty: 'General',
   url: 'https://laegeskaelskor.dk',

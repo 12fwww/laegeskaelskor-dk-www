@@ -4,10 +4,19 @@ import Pic from '../../components/Pic.astro';
 import { breadcrumb, clinic } from '../../data/site';
 import building from '../../assets/original/building-16-9.jpg';
 const B = import.meta.env.BASE_URL;
+const faq = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'Hvordan bliver jeg oprettet hos klinikken?', acceptedAnswer: { '@type': 'Answer', text: 'Du ringer i åbningstiden, og vi opretter dig som patient. Derefter kan du logge ind på Lægevejen og bestille tider, fast medicin og e-konsultation.' } },
+    { '@type': 'Question', name: 'Kan jeg bestille en tid online?', acceptedAnswer: { '@type': 'Answer', text: 'Ja. Via Lægevejen eller appen Min Læge kan du booke tid hos sygeplejerskerne og lægerne, så du undgår ventetid.' } },
+    { '@type': 'Question', name: 'Hvordan får jeg en receptfornyelse?', acceptedAnswer: { '@type': 'Answer', text: 'Bestil fast medicin via Lægevejen. Vi godkender ansøgningerne dagligt, så medicinen som regel er klar næste hverdag.' } },
+  ],
+};
 const jsonld = [breadcrumb([
   { name: 'Hjem', path: '/' },
   { name: 'Kontakt', path: '/kontakt-os/' },
-])];
+]), faq];
 ---
 <Base title="Kontakt – Almen Lægeklinik Skælskør"
       description="Kontakt Almen Lægeklinik Skælskør på Gammelgade 10, 4230 Skælskør. Telefon 69 16 14 33, åbent man–fre 8:00–16:00. Bestil også online via Lægevejen."
@@ -34,6 +43,20 @@ const jsonld = [breadcrumb([
         <Pic src={building} alt="Klinikbygningen på Gammelgade 10 i Skælskør" width={1667} height={937} />
         <figcaption class="cap">Gammelgade 10, 4230 Skælskør.</figcaption>
       </figure>
+    </div>
+  </section>
+
+  <section class="prose wrap">
+    <div class="block" data-reveal>
+      <div class="block-body">
+        <h2>Ofte stillede spørgsmål</h2>
+        <h3>Hvordan bliver jeg oprettet hos klinikken?</h3>
+        <p>Du ringer i åbningstiden, og vi opretter dig som patient. Derefter kan du logge ind på Lægevejen og bestille tider, bestille fast medicin og få e-konsultation, når det passer dig.</p>
+        <h3>Kan jeg bestille en tid online?</h3>
+        <p>Ja. Via Lægevejen eller appen Min Læge kan du booke tid hos sygeplejerskerne og lægerne. Det sparer ventetid, så du ikke behøver at vente i telefon.</p>
+        <h3>Hvordan får jeg en receptfornyelse?</h3>
+        <p>Bestil fast medicin direkte via Lægevejen. Vi godkender ansøgningerne dagligt, så medicinen som regel er klar næste hverdag, og apoteket kan levere den.</p>
+      </div>
     </div>
   </section>
 
